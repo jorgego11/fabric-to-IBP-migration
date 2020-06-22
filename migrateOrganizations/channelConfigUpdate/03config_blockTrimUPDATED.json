@@ -1,0 +1,1109 @@
+{
+  "channel_group": {
+    "groups": {
+      "Application": {
+        "groups": {
+          "AtlantisMSP": {
+            "groups": {},
+            "mod_policy": "Admins",
+            "policies": {
+              "Admins": {
+                "mod_policy": "Admins",
+                "policy": {
+                  "type": 1,
+                  "value": {
+                    "identities": [
+                      {
+                        "principal": {
+                          "msp_identifier": "AtlantisMSP",
+                          "role": "ADMIN"
+                        },
+                        "principal_classification": "ROLE"
+                      }
+                    ],
+                    "rule": {
+                      "n_out_of": {
+                        "n": 1,
+                        "rules": [
+                          {
+                            "signed_by": 0
+                          }
+                        ]
+                      }
+                    },
+                    "version": 0
+                  }
+                },
+                "version": "0"
+              },
+              "Readers": {
+                "mod_policy": "Admins",
+                "policy": {
+                  "type": 1,
+                  "value": {
+                    "identities": [
+                      {
+                        "principal": {
+                          "msp_identifier": "AtlantisMSP",
+                          "role": "ADMIN"
+                        },
+                        "principal_classification": "ROLE"
+                      },
+                      {
+                        "principal": {
+                          "msp_identifier": "AtlantisMSP",
+                          "role": "PEER"
+                        },
+                        "principal_classification": "ROLE"
+                      },
+                      {
+                        "principal": {
+                          "msp_identifier": "AtlantisMSP",
+                          "role": "CLIENT"
+                        },
+                        "principal_classification": "ROLE"
+                      }
+                    ],
+                    "rule": {
+                      "n_out_of": {
+                        "n": 1,
+                        "rules": [
+                          {
+                            "signed_by": 0
+                          },
+                          {
+                            "signed_by": 1
+                          },
+                          {
+                            "signed_by": 2
+                          }
+                        ]
+                      }
+                    },
+                    "version": 0
+                  }
+                },
+                "version": "0"
+              },
+              "Writers": {
+                "mod_policy": "Admins",
+                "policy": {
+                  "type": 1,
+                  "value": {
+                    "identities": [
+                      {
+                        "principal": {
+                          "msp_identifier": "AtlantisMSP",
+                          "role": "ADMIN"
+                        },
+                        "principal_classification": "ROLE"
+                      },
+                      {
+                        "principal": {
+                          "msp_identifier": "AtlantisMSP",
+                          "role": "CLIENT"
+                        },
+                        "principal_classification": "ROLE"
+                      }
+                    ],
+                    "rule": {
+                      "n_out_of": {
+                        "n": 1,
+                        "rules": [
+                          {
+                            "signed_by": 0
+                          },
+                          {
+                            "signed_by": 1
+                          }
+                        ]
+                      }
+                    },
+                    "version": 0
+                  }
+                },
+                "version": "0"
+              }
+            },
+            "values": {
+              "AnchorPeers": {
+                "mod_policy": "Admins",
+                "value": {
+                  "anchor_peers": [
+                    {
+                      "host": "peer0.atlantis.com",
+                      "port": 7051
+                    }
+                  ]
+                },
+                "version": "0"
+              },
+              "MSP": {
+                "mod_policy": "Admins",
+                "value": {
+                  "config": {
+                    "admins": [],
+                    "crypto_config": {
+                      "identity_identifier_hash_function": "SHA256",
+                      "signature_hash_family": "SHA2"
+                    },
+                    "fabric_node_ous": {
+                      "admin_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNRVENDQWVpZ0F3SUJBZ0lSQUpXcjZCV3hHZTFQbGhFemtzYmxkNE13Q2dZSUtvWkl6ajBFQXdJd2F6RUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhGVEFUQmdOVkJBb1RER0YwYkdGdWRHbHpMbU52YlRFWU1CWUdBMVVFQXhNUFkyRXVZWFJzCllXNTBhWE11WTI5dE1CNFhEVEl3TURVeE5URTRORFl3TUZvWERUTXdNRFV4TXpFNE5EWXdNRm93YXpFTE1Ba0cKQTFVRUJoTUNWVk14RXpBUkJnTlZCQWdUQ2tOaGJHbG1iM0p1YVdFeEZqQVVCZ05WQkFjVERWTmhiaUJHY21GdQpZMmx6WTI4eEZUQVRCZ05WQkFvVERHRjBiR0Z1ZEdsekxtTnZiVEVZTUJZR0ExVUVBeE1QWTJFdVlYUnNZVzUwCmFYTXVZMjl0TUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFYVdsUTk0YW5zanM0S1VIOXI5ZWsKaGlWV3Ntc2Q4cmVXYXNiRTNsenhET0ozTTdCMEwzU1NBNjNIclNFckloRzZCZ2tYNEtERjN1aE5TMDVWR2VwcgpTYU50TUdzd0RnWURWUjBQQVFIL0JBUURBZ0dtTUIwR0ExVWRKUVFXTUJRR0NDc0dBUVVGQndNQ0JnZ3JCZ0VGCkJRY0RBVEFQQmdOVkhSTUJBZjhFQlRBREFRSC9NQ2tHQTFVZERnUWlCQ0RYODVZTnpPdkU5c2lGTnI1VUlvOFIKU3NVVTN3WFU1QXlLSUlKV1hWNDBsREFLQmdncWhrak9QUVFEQWdOSEFEQkVBaUFGQkFNaTEwd1JKZW9mTER2RApsQ0ZRL1ZRa1FNeWEvbENwRlBnMXJlQXd6Z0lnWWF1bWRHNjR1OGVkWkRJUklUc1ZYeDEzMGhiTEZCNHoxQXU1CnM0NEg2TUk9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+                        "organizational_unit_identifier": "admin"
+                      },
+                      "client_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNRVENDQWVpZ0F3SUJBZ0lSQUpXcjZCV3hHZTFQbGhFemtzYmxkNE13Q2dZSUtvWkl6ajBFQXdJd2F6RUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhGVEFUQmdOVkJBb1RER0YwYkdGdWRHbHpMbU52YlRFWU1CWUdBMVVFQXhNUFkyRXVZWFJzCllXNTBhWE11WTI5dE1CNFhEVEl3TURVeE5URTRORFl3TUZvWERUTXdNRFV4TXpFNE5EWXdNRm93YXpFTE1Ba0cKQTFVRUJoTUNWVk14RXpBUkJnTlZCQWdUQ2tOaGJHbG1iM0p1YVdFeEZqQVVCZ05WQkFjVERWTmhiaUJHY21GdQpZMmx6WTI4eEZUQVRCZ05WQkFvVERHRjBiR0Z1ZEdsekxtTnZiVEVZTUJZR0ExVUVBeE1QWTJFdVlYUnNZVzUwCmFYTXVZMjl0TUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFYVdsUTk0YW5zanM0S1VIOXI5ZWsKaGlWV3Ntc2Q4cmVXYXNiRTNsenhET0ozTTdCMEwzU1NBNjNIclNFckloRzZCZ2tYNEtERjN1aE5TMDVWR2VwcgpTYU50TUdzd0RnWURWUjBQQVFIL0JBUURBZ0dtTUIwR0ExVWRKUVFXTUJRR0NDc0dBUVVGQndNQ0JnZ3JCZ0VGCkJRY0RBVEFQQmdOVkhSTUJBZjhFQlRBREFRSC9NQ2tHQTFVZERnUWlCQ0RYODVZTnpPdkU5c2lGTnI1VUlvOFIKU3NVVTN3WFU1QXlLSUlKV1hWNDBsREFLQmdncWhrak9QUVFEQWdOSEFEQkVBaUFGQkFNaTEwd1JKZW9mTER2RApsQ0ZRL1ZRa1FNeWEvbENwRlBnMXJlQXd6Z0lnWWF1bWRHNjR1OGVkWkRJUklUc1ZYeDEzMGhiTEZCNHoxQXU1CnM0NEg2TUk9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+                        "organizational_unit_identifier": "client"
+                      },
+                      "enable": true,
+                      "orderer_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNRVENDQWVpZ0F3SUJBZ0lSQUpXcjZCV3hHZTFQbGhFemtzYmxkNE13Q2dZSUtvWkl6ajBFQXdJd2F6RUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhGVEFUQmdOVkJBb1RER0YwYkdGdWRHbHpMbU52YlRFWU1CWUdBMVVFQXhNUFkyRXVZWFJzCllXNTBhWE11WTI5dE1CNFhEVEl3TURVeE5URTRORFl3TUZvWERUTXdNRFV4TXpFNE5EWXdNRm93YXpFTE1Ba0cKQTFVRUJoTUNWVk14RXpBUkJnTlZCQWdUQ2tOaGJHbG1iM0p1YVdFeEZqQVVCZ05WQkFjVERWTmhiaUJHY21GdQpZMmx6WTI4eEZUQVRCZ05WQkFvVERHRjBiR0Z1ZEdsekxtTnZiVEVZTUJZR0ExVUVBeE1QWTJFdVlYUnNZVzUwCmFYTXVZMjl0TUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFYVdsUTk0YW5zanM0S1VIOXI5ZWsKaGlWV3Ntc2Q4cmVXYXNiRTNsenhET0ozTTdCMEwzU1NBNjNIclNFckloRzZCZ2tYNEtERjN1aE5TMDVWR2VwcgpTYU50TUdzd0RnWURWUjBQQVFIL0JBUURBZ0dtTUIwR0ExVWRKUVFXTUJRR0NDc0dBUVVGQndNQ0JnZ3JCZ0VGCkJRY0RBVEFQQmdOVkhSTUJBZjhFQlRBREFRSC9NQ2tHQTFVZERnUWlCQ0RYODVZTnpPdkU5c2lGTnI1VUlvOFIKU3NVVTN3WFU1QXlLSUlKV1hWNDBsREFLQmdncWhrak9QUVFEQWdOSEFEQkVBaUFGQkFNaTEwd1JKZW9mTER2RApsQ0ZRL1ZRa1FNeWEvbENwRlBnMXJlQXd6Z0lnWWF1bWRHNjR1OGVkWkRJUklUc1ZYeDEzMGhiTEZCNHoxQXU1CnM0NEg2TUk9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+                        "organizational_unit_identifier": "orderer"
+                      },
+                      "peer_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNRVENDQWVpZ0F3SUJBZ0lSQUpXcjZCV3hHZTFQbGhFemtzYmxkNE13Q2dZSUtvWkl6ajBFQXdJd2F6RUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhGVEFUQmdOVkJBb1RER0YwYkdGdWRHbHpMbU52YlRFWU1CWUdBMVVFQXhNUFkyRXVZWFJzCllXNTBhWE11WTI5dE1CNFhEVEl3TURVeE5URTRORFl3TUZvWERUTXdNRFV4TXpFNE5EWXdNRm93YXpFTE1Ba0cKQTFVRUJoTUNWVk14RXpBUkJnTlZCQWdUQ2tOaGJHbG1iM0p1YVdFeEZqQVVCZ05WQkFjVERWTmhiaUJHY21GdQpZMmx6WTI4eEZUQVRCZ05WQkFvVERHRjBiR0Z1ZEdsekxtTnZiVEVZTUJZR0ExVUVBeE1QWTJFdVlYUnNZVzUwCmFYTXVZMjl0TUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFYVdsUTk0YW5zanM0S1VIOXI5ZWsKaGlWV3Ntc2Q4cmVXYXNiRTNsenhET0ozTTdCMEwzU1NBNjNIclNFckloRzZCZ2tYNEtERjN1aE5TMDVWR2VwcgpTYU50TUdzd0RnWURWUjBQQVFIL0JBUURBZ0dtTUIwR0ExVWRKUVFXTUJRR0NDc0dBUVVGQndNQ0JnZ3JCZ0VGCkJRY0RBVEFQQmdOVkhSTUJBZjhFQlRBREFRSC9NQ2tHQTFVZERnUWlCQ0RYODVZTnpPdkU5c2lGTnI1VUlvOFIKU3NVVTN3WFU1QXlLSUlKV1hWNDBsREFLQmdncWhrak9QUVFEQWdOSEFEQkVBaUFGQkFNaTEwd1JKZW9mTER2RApsQ0ZRL1ZRa1FNeWEvbENwRlBnMXJlQXd6Z0lnWWF1bWRHNjR1OGVkWkRJUklUc1ZYeDEzMGhiTEZCNHoxQXU1CnM0NEg2TUk9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+                        "organizational_unit_identifier": "peer"
+                      }
+                    },
+                    "intermediate_certs": [],
+                    "name": "AtlantisMSP",
+                    "organizational_unit_identifiers": [],
+                    "revocation_list": [],
+                    "root_certs": [
+                      "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNRVENDQWVpZ0F3SUJBZ0lSQUpXcjZCV3hHZTFQbGhFemtzYmxkNE13Q2dZSUtvWkl6ajBFQXdJd2F6RUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhGVEFUQmdOVkJBb1RER0YwYkdGdWRHbHpMbU52YlRFWU1CWUdBMVVFQXhNUFkyRXVZWFJzCllXNTBhWE11WTI5dE1CNFhEVEl3TURVeE5URTRORFl3TUZvWERUTXdNRFV4TXpFNE5EWXdNRm93YXpFTE1Ba0cKQTFVRUJoTUNWVk14RXpBUkJnTlZCQWdUQ2tOaGJHbG1iM0p1YVdFeEZqQVVCZ05WQkFjVERWTmhiaUJHY21GdQpZMmx6WTI4eEZUQVRCZ05WQkFvVERHRjBiR0Z1ZEdsekxtTnZiVEVZTUJZR0ExVUVBeE1QWTJFdVlYUnNZVzUwCmFYTXVZMjl0TUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFYVdsUTk0YW5zanM0S1VIOXI5ZWsKaGlWV3Ntc2Q4cmVXYXNiRTNsenhET0ozTTdCMEwzU1NBNjNIclNFckloRzZCZ2tYNEtERjN1aE5TMDVWR2VwcgpTYU50TUdzd0RnWURWUjBQQVFIL0JBUURBZ0dtTUIwR0ExVWRKUVFXTUJRR0NDc0dBUVVGQndNQ0JnZ3JCZ0VGCkJRY0RBVEFQQmdOVkhSTUJBZjhFQlRBREFRSC9NQ2tHQTFVZERnUWlCQ0RYODVZTnpPdkU5c2lGTnI1VUlvOFIKU3NVVTN3WFU1QXlLSUlKV1hWNDBsREFLQmdncWhrak9QUVFEQWdOSEFEQkVBaUFGQkFNaTEwd1JKZW9mTER2RApsQ0ZRL1ZRa1FNeWEvbENwRlBnMXJlQXd6Z0lnWWF1bWRHNjR1OGVkWkRJUklUc1ZYeDEzMGhiTEZCNHoxQXU1CnM0NEg2TUk9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+                    ],
+                    "signing_identity": null,
+                    "tls_intermediate_certs": [],
+                    "tls_root_certs": [
+                      "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNTRENDQWU2Z0F3SUJBZ0lSQU4rd2VSTURPM0Rtd1hhVlBiazFmazR3Q2dZSUtvWkl6ajBFQXdJd2JqRUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhGVEFUQmdOVkJBb1RER0YwYkdGdWRHbHpMbU52YlRFYk1Ca0dBMVVFQXhNU2RHeHpZMkV1CllYUnNZVzUwYVhNdVkyOXRNQjRYRFRJd01EVXhOVEU0TkRZd01Gb1hEVE13TURVeE16RTRORFl3TUZvd2JqRUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhGVEFUQmdOVkJBb1RER0YwYkdGdWRHbHpMbU52YlRFYk1Ca0dBMVVFQXhNU2RHeHpZMkV1CllYUnNZVzUwYVhNdVkyOXRNRmt3RXdZSEtvWkl6ajBDQVFZSUtvWkl6ajBEQVFjRFFnQUVHa3pkQmpHOG1mdlAKNXZZVDIvOHFhc2ZuZGdFWUJqQWZkbTF1c2FySFMxeC94K0tuVFh0TDZKcGFPb05BSEkrcWp5SkJSaXhXRTExYwo4YzRYS2FNNEI2TnRNR3N3RGdZRFZSMFBBUUgvQkFRREFnR21NQjBHQTFVZEpRUVdNQlFHQ0NzR0FRVUZCd01DCkJnZ3JCZ0VGQlFjREFUQVBCZ05WSFJNQkFmOEVCVEFEQVFIL01Da0dBMVVkRGdRaUJDQjFwbjJQZnpKUW5KU04KSE8yMXhjOGdKeDNnRWdUclZoTHRPZTFsSmp1eXlUQUtCZ2dxaGtqT1BRUURBZ05JQURCRkFpRUFwN05Wd2w1YgpUTEhmNUNINUVKeFdTL2Y1NUx4UkV2cGJkTlYxUStmYW5zc0NJR0ZsaTBPSWd3d2hScFZEVGdnNHk1MGx3RW84CmVpa2VieFFLSE93Sld0eDAKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
+                    ]
+                  },
+                  "type": 0
+                },
+                "version": "0"
+              }
+            },
+            "version": "1"
+          },
+          "KargaMSP": {
+            "groups": {},
+            "mod_policy": "Admins",
+            "policies": {
+              "Admins": {
+                "mod_policy": "Admins",
+                "policy": {
+                  "type": 1,
+                  "value": {
+                    "identities": [
+                      {
+                        "principal": {
+                          "msp_identifier": "KargaMSP",
+                          "role": "ADMIN"
+                        },
+                        "principal_classification": "ROLE"
+                      }
+                    ],
+                    "rule": {
+                      "n_out_of": {
+                        "n": 1,
+                        "rules": [
+                          {
+                            "signed_by": 0
+                          }
+                        ]
+                      }
+                    },
+                    "version": 0
+                  }
+                },
+                "version": "0"
+              },
+              "Readers": {
+                "mod_policy": "Admins",
+                "policy": {
+                  "type": 1,
+                  "value": {
+                    "identities": [
+                      {
+                        "principal": {
+                          "msp_identifier": "KargaMSP",
+                          "role": "ADMIN"
+                        },
+                        "principal_classification": "ROLE"
+                      },
+                      {
+                        "principal": {
+                          "msp_identifier": "KargaMSP",
+                          "role": "PEER"
+                        },
+                        "principal_classification": "ROLE"
+                      },
+                      {
+                        "principal": {
+                          "msp_identifier": "KargaMSP",
+                          "role": "CLIENT"
+                        },
+                        "principal_classification": "ROLE"
+                      }
+                    ],
+                    "rule": {
+                      "n_out_of": {
+                        "n": 1,
+                        "rules": [
+                          {
+                            "signed_by": 0
+                          },
+                          {
+                            "signed_by": 1
+                          },
+                          {
+                            "signed_by": 2
+                          }
+                        ]
+                      }
+                    },
+                    "version": 0
+                  }
+                },
+                "version": "0"
+              },
+              "Writers": {
+                "mod_policy": "Admins",
+                "policy": {
+                  "type": 1,
+                  "value": {
+                    "identities": [
+                      {
+                        "principal": {
+                          "msp_identifier": "KargaMSP",
+                          "role": "ADMIN"
+                        },
+                        "principal_classification": "ROLE"
+                      },
+                      {
+                        "principal": {
+                          "msp_identifier": "KargaMSP",
+                          "role": "CLIENT"
+                        },
+                        "principal_classification": "ROLE"
+                      }
+                    ],
+                    "rule": {
+                      "n_out_of": {
+                        "n": 1,
+                        "rules": [
+                          {
+                            "signed_by": 0
+                          },
+                          {
+                            "signed_by": 1
+                          }
+                        ]
+                      }
+                    },
+                    "version": 0
+                  }
+                },
+                "version": "0"
+              }
+            },
+            "values": {
+              "AnchorPeers": {
+                "mod_policy": "Admins",
+                "value": {
+                  "anchor_peers": [
+                    {
+                      "host": "peer0.aptalkarga.tr",
+                      "port": 7051
+                    },
+                    {
+                      "host": "ibp-jorge-peeribp1-peer.mycluster-dal12-bd8e586d66eff81119bfe4722b13dbd4-0000.us-south.containers.appdomain.cloud",
+                      "port": 443
+                    }
+                  ]
+                },
+                "version": "1"
+              },
+              "MSP": {
+                "mod_policy": "Admins",
+                "value": {
+                  "config": {
+                    "admins": [],
+                    "crypto_config": {
+                      "identity_identifier_hash_function": "SHA256",
+                      "signature_hash_family": "SHA2"
+                    },
+                    "fabric_node_ous": {
+                      "admin_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNSRENDQWV1Z0F3SUJBZ0lRWFVIYVVtUFlVaStsZGJtaGVnbjRGekFLQmdncWhrak9QUVFEQWpCdE1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVdNQlFHQTFVRUNoTU5ZWEIwWVd4cllYSm5ZUzUwY2pFWk1CY0dBMVVFQXhNUVkyRXVZWEIwCllXeHJZWEpuWVM1MGNqQWVGdzB5TURBMU1UVXhPRFExTURCYUZ3MHpNREExTVRNeE9EUTFNREJhTUcweEN6QUoKQmdOVkJBWVRBbFZUTVJNd0VRWURWUVFJRXdwRFlXeHBabTl5Ym1saE1SWXdGQVlEVlFRSEV3MVRZVzRnUm5KaApibU5wYzJOdk1SWXdGQVlEVlFRS0V3MWhjSFJoYkd0aGNtZGhMblJ5TVJrd0Z3WURWUVFERXhCallTNWhjSFJoCmJHdGhjbWRoTG5SeU1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRTlZTktqbk5Ic2NEcVQzNWUKdGdRZmxCV3haWit2K1d3UFh6RjFTZzJKQktoN1BGWUlrZGIxL0ZGUW1nSURxWWhZS1FWNm0vdUhaSFlaRU9kUQp6WlBWdjZOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbU1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUNCZ2dyCkJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUNrR0ExVWREZ1FpQkNCcUFPdkRTemVqeTc5UTVHRTUKT2NFSGM5bEg4aWh4akp3R1A0Mm5Wblphc2pBS0JnZ3Foa2pPUFFRREFnTkhBREJFQWlCNnQzZGNBWkNONFY3VQptTHR3bUx0NVlVZ244eXNkU3JqUm9XQUplUzRMRHdJZ1hHWU9GTVp6MU84ejhyZUQwMEtOYWIwa0tTdWpkZ3B5CkdxSGttZ2lCRDBFPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "organizational_unit_identifier": "admin"
+                      },
+                      "client_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNSRENDQWV1Z0F3SUJBZ0lRWFVIYVVtUFlVaStsZGJtaGVnbjRGekFLQmdncWhrak9QUVFEQWpCdE1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVdNQlFHQTFVRUNoTU5ZWEIwWVd4cllYSm5ZUzUwY2pFWk1CY0dBMVVFQXhNUVkyRXVZWEIwCllXeHJZWEpuWVM1MGNqQWVGdzB5TURBMU1UVXhPRFExTURCYUZ3MHpNREExTVRNeE9EUTFNREJhTUcweEN6QUoKQmdOVkJBWVRBbFZUTVJNd0VRWURWUVFJRXdwRFlXeHBabTl5Ym1saE1SWXdGQVlEVlFRSEV3MVRZVzRnUm5KaApibU5wYzJOdk1SWXdGQVlEVlFRS0V3MWhjSFJoYkd0aGNtZGhMblJ5TVJrd0Z3WURWUVFERXhCallTNWhjSFJoCmJHdGhjbWRoTG5SeU1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRTlZTktqbk5Ic2NEcVQzNWUKdGdRZmxCV3haWit2K1d3UFh6RjFTZzJKQktoN1BGWUlrZGIxL0ZGUW1nSURxWWhZS1FWNm0vdUhaSFlaRU9kUQp6WlBWdjZOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbU1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUNCZ2dyCkJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUNrR0ExVWREZ1FpQkNCcUFPdkRTemVqeTc5UTVHRTUKT2NFSGM5bEg4aWh4akp3R1A0Mm5Wblphc2pBS0JnZ3Foa2pPUFFRREFnTkhBREJFQWlCNnQzZGNBWkNONFY3VQptTHR3bUx0NVlVZ244eXNkU3JqUm9XQUplUzRMRHdJZ1hHWU9GTVp6MU84ejhyZUQwMEtOYWIwa0tTdWpkZ3B5CkdxSGttZ2lCRDBFPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "organizational_unit_identifier": "client"
+                      },
+                      "enable": true,
+                      "orderer_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNSRENDQWV1Z0F3SUJBZ0lRWFVIYVVtUFlVaStsZGJtaGVnbjRGekFLQmdncWhrak9QUVFEQWpCdE1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVdNQlFHQTFVRUNoTU5ZWEIwWVd4cllYSm5ZUzUwY2pFWk1CY0dBMVVFQXhNUVkyRXVZWEIwCllXeHJZWEpuWVM1MGNqQWVGdzB5TURBMU1UVXhPRFExTURCYUZ3MHpNREExTVRNeE9EUTFNREJhTUcweEN6QUoKQmdOVkJBWVRBbFZUTVJNd0VRWURWUVFJRXdwRFlXeHBabTl5Ym1saE1SWXdGQVlEVlFRSEV3MVRZVzRnUm5KaApibU5wYzJOdk1SWXdGQVlEVlFRS0V3MWhjSFJoYkd0aGNtZGhMblJ5TVJrd0Z3WURWUVFERXhCallTNWhjSFJoCmJHdGhjbWRoTG5SeU1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRTlZTktqbk5Ic2NEcVQzNWUKdGdRZmxCV3haWit2K1d3UFh6RjFTZzJKQktoN1BGWUlrZGIxL0ZGUW1nSURxWWhZS1FWNm0vdUhaSFlaRU9kUQp6WlBWdjZOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbU1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUNCZ2dyCkJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUNrR0ExVWREZ1FpQkNCcUFPdkRTemVqeTc5UTVHRTUKT2NFSGM5bEg4aWh4akp3R1A0Mm5Wblphc2pBS0JnZ3Foa2pPUFFRREFnTkhBREJFQWlCNnQzZGNBWkNONFY3VQptTHR3bUx0NVlVZ244eXNkU3JqUm9XQUplUzRMRHdJZ1hHWU9GTVp6MU84ejhyZUQwMEtOYWIwa0tTdWpkZ3B5CkdxSGttZ2lCRDBFPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "organizational_unit_identifier": "orderer"
+                      },
+                      "peer_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNSRENDQWV1Z0F3SUJBZ0lRWFVIYVVtUFlVaStsZGJtaGVnbjRGekFLQmdncWhrak9QUVFEQWpCdE1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVdNQlFHQTFVRUNoTU5ZWEIwWVd4cllYSm5ZUzUwY2pFWk1CY0dBMVVFQXhNUVkyRXVZWEIwCllXeHJZWEpuWVM1MGNqQWVGdzB5TURBMU1UVXhPRFExTURCYUZ3MHpNREExTVRNeE9EUTFNREJhTUcweEN6QUoKQmdOVkJBWVRBbFZUTVJNd0VRWURWUVFJRXdwRFlXeHBabTl5Ym1saE1SWXdGQVlEVlFRSEV3MVRZVzRnUm5KaApibU5wYzJOdk1SWXdGQVlEVlFRS0V3MWhjSFJoYkd0aGNtZGhMblJ5TVJrd0Z3WURWUVFERXhCallTNWhjSFJoCmJHdGhjbWRoTG5SeU1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRTlZTktqbk5Ic2NEcVQzNWUKdGdRZmxCV3haWit2K1d3UFh6RjFTZzJKQktoN1BGWUlrZGIxL0ZGUW1nSURxWWhZS1FWNm0vdUhaSFlaRU9kUQp6WlBWdjZOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbU1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUNCZ2dyCkJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUNrR0ExVWREZ1FpQkNCcUFPdkRTemVqeTc5UTVHRTUKT2NFSGM5bEg4aWh4akp3R1A0Mm5Wblphc2pBS0JnZ3Foa2pPUFFRREFnTkhBREJFQWlCNnQzZGNBWkNONFY3VQptTHR3bUx0NVlVZ244eXNkU3JqUm9XQUplUzRMRHdJZ1hHWU9GTVp6MU84ejhyZUQwMEtOYWIwa0tTdWpkZ3B5CkdxSGttZ2lCRDBFPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "organizational_unit_identifier": "peer"
+                      }
+                    },
+                    "intermediate_certs": [],
+                    "name": "KargaMSP",
+                    "organizational_unit_identifiers": [],
+                    "revocation_list": [],
+                    "root_certs": [
+                      "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNSRENDQWV1Z0F3SUJBZ0lRWFVIYVVtUFlVaStsZGJtaGVnbjRGekFLQmdncWhrak9QUVFEQWpCdE1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVdNQlFHQTFVRUNoTU5ZWEIwWVd4cllYSm5ZUzUwY2pFWk1CY0dBMVVFQXhNUVkyRXVZWEIwCllXeHJZWEpuWVM1MGNqQWVGdzB5TURBMU1UVXhPRFExTURCYUZ3MHpNREExTVRNeE9EUTFNREJhTUcweEN6QUoKQmdOVkJBWVRBbFZUTVJNd0VRWURWUVFJRXdwRFlXeHBabTl5Ym1saE1SWXdGQVlEVlFRSEV3MVRZVzRnUm5KaApibU5wYzJOdk1SWXdGQVlEVlFRS0V3MWhjSFJoYkd0aGNtZGhMblJ5TVJrd0Z3WURWUVFERXhCallTNWhjSFJoCmJHdGhjbWRoTG5SeU1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRTlZTktqbk5Ic2NEcVQzNWUKdGdRZmxCV3haWit2K1d3UFh6RjFTZzJKQktoN1BGWUlrZGIxL0ZGUW1nSURxWWhZS1FWNm0vdUhaSFlaRU9kUQp6WlBWdjZOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbU1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUNCZ2dyCkJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUNrR0ExVWREZ1FpQkNCcUFPdkRTemVqeTc5UTVHRTUKT2NFSGM5bEg4aWh4akp3R1A0Mm5Wblphc2pBS0JnZ3Foa2pPUFFRREFnTkhBREJFQWlCNnQzZGNBWkNONFY3VQptTHR3bUx0NVlVZ244eXNkU3JqUm9XQUplUzRMRHdJZ1hHWU9GTVp6MU84ejhyZUQwMEtOYWIwa0tTdWpkZ3B5CkdxSGttZ2lCRDBFPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="
+                    ],
+                    "signing_identity": null,
+                    "tls_intermediate_certs": [],
+                    "tls_root_certs": [
+                      "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNTakNDQWZHZ0F3SUJBZ0lRZVZ6OUFDYXk0OGZ4aEtRdnVHbFUrekFLQmdncWhrak9QUVFEQWpCd01Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVdNQlFHQTFVRUNoTU5ZWEIwWVd4cllYSm5ZUzUwY2pFY01Cb0dBMVVFQXhNVGRHeHpZMkV1CllYQjBZV3hyWVhKbllTNTBjakFlRncweU1EQTFNVFV4T0RRMU1EQmFGdzB6TURBMU1UTXhPRFExTURCYU1IQXgKQ3pBSkJnTlZCQVlUQWxWVE1STXdFUVlEVlFRSUV3cERZV3hwWm05eWJtbGhNUll3RkFZRFZRUUhFdzFUWVc0ZwpSbkpoYm1OcGMyTnZNUll3RkFZRFZRUUtFdzFoY0hSaGJHdGhjbWRoTG5SeU1Sd3dHZ1lEVlFRREV4TjBiSE5qCllTNWhjSFJoYkd0aGNtZGhMblJ5TUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFVkt0NGo1TnMKdnYwbzNYdm5GUjdKL0h5Zm5uWUxMcEN4cmxjSFNzd1pqa2xoR0g5YmZibkh0ZUg3WDUxWHp6Ny94RWV4bG54cQphOWpRYndNWkhNVlJpcU50TUdzd0RnWURWUjBQQVFIL0JBUURBZ0dtTUIwR0ExVWRKUVFXTUJRR0NDc0dBUVVGCkJ3TUNCZ2dyQmdFRkJRY0RBVEFQQmdOVkhSTUJBZjhFQlRBREFRSC9NQ2tHQTFVZERnUWlCQ0N2bEZlbW1iQlAKRzQ4NkpLRGRoazZDbUZjR2cxMnhxTi92aXp4b3NZeVlxekFLQmdncWhrak9QUVFEQWdOSEFEQkVBaUFvcUZ6egp3NnlMRUtDSUJjblBJdzh6QkIzL0FBQlZENXZod0ZaWm5lY2Nvd0lnWHZOVDdtZnJTRi9SdEN5aTlOeVNUUmV6CjZRSVRXaTd2VVVPaWhQb3JyZkU9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+                    ]
+                  },
+                  "type": 0
+                },
+                "version": "0"
+              }
+            },
+            "version": "1"
+          },
+          "NevergreenMSP": {
+            "groups": {},
+            "mod_policy": "Admins",
+            "policies": {
+              "Admins": {
+                "mod_policy": "Admins",
+                "policy": {
+                  "type": 1,
+                  "value": {
+                    "identities": [
+                      {
+                        "principal": {
+                          "msp_identifier": "NevergreenMSP",
+                          "role": "ADMIN"
+                        },
+                        "principal_classification": "ROLE"
+                      }
+                    ],
+                    "rule": {
+                      "n_out_of": {
+                        "n": 1,
+                        "rules": [
+                          {
+                            "signed_by": 0
+                          }
+                        ]
+                      }
+                    },
+                    "version": 0
+                  }
+                },
+                "version": "0"
+              },
+              "Readers": {
+                "mod_policy": "Admins",
+                "policy": {
+                  "type": 1,
+                  "value": {
+                    "identities": [
+                      {
+                        "principal": {
+                          "msp_identifier": "NevergreenMSP",
+                          "role": "ADMIN"
+                        },
+                        "principal_classification": "ROLE"
+                      },
+                      {
+                        "principal": {
+                          "msp_identifier": "NevergreenMSP",
+                          "role": "PEER"
+                        },
+                        "principal_classification": "ROLE"
+                      },
+                      {
+                        "principal": {
+                          "msp_identifier": "NevergreenMSP",
+                          "role": "CLIENT"
+                        },
+                        "principal_classification": "ROLE"
+                      }
+                    ],
+                    "rule": {
+                      "n_out_of": {
+                        "n": 1,
+                        "rules": [
+                          {
+                            "signed_by": 0
+                          },
+                          {
+                            "signed_by": 1
+                          },
+                          {
+                            "signed_by": 2
+                          }
+                        ]
+                      }
+                    },
+                    "version": 0
+                  }
+                },
+                "version": "0"
+              },
+              "Writers": {
+                "mod_policy": "Admins",
+                "policy": {
+                  "type": 1,
+                  "value": {
+                    "identities": [
+                      {
+                        "principal": {
+                          "msp_identifier": "NevergreenMSP",
+                          "role": "ADMIN"
+                        },
+                        "principal_classification": "ROLE"
+                      },
+                      {
+                        "principal": {
+                          "msp_identifier": "NevergreenMSP",
+                          "role": "CLIENT"
+                        },
+                        "principal_classification": "ROLE"
+                      }
+                    ],
+                    "rule": {
+                      "n_out_of": {
+                        "n": 1,
+                        "rules": [
+                          {
+                            "signed_by": 0
+                          },
+                          {
+                            "signed_by": 1
+                          }
+                        ]
+                      }
+                    },
+                    "version": 0
+                  }
+                },
+                "version": "0"
+              }
+            },
+            "values": {
+              "AnchorPeers": {
+                "mod_policy": "Admins",
+                "value": {
+                  "anchor_peers": [
+                    {
+                      "host": "peer0.nevergreen.nl",
+                      "port": 7051
+                    }
+                  ]
+                },
+                "version": "0"
+              },
+              "MSP": {
+                "mod_policy": "Admins",
+                "value": {
+                  "config": {
+                    "admins": [],
+                    "crypto_config": {
+                      "identity_identifier_hash_function": "SHA256",
+                      "signature_hash_family": "SHA2"
+                    },
+                    "fabric_node_ous": {
+                      "admin_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNSVENDQWV1Z0F3SUJBZ0lRSnlNbUpzOUljM0pCdGJWdm52cEJ6akFLQmdncWhrak9QUVFEQWpCdE1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVdNQlFHQTFVRUNoTU5ibVYyWlhKbmNtVmxiaTV1YkRFWk1CY0dBMVVFQXhNUVkyRXVibVYyClpYSm5jbVZsYmk1dWJEQWVGdzB5TURBMU1UVXhPRFEyTURCYUZ3MHpNREExTVRNeE9EUTJNREJhTUcweEN6QUoKQmdOVkJBWVRBbFZUTVJNd0VRWURWUVFJRXdwRFlXeHBabTl5Ym1saE1SWXdGQVlEVlFRSEV3MVRZVzRnUm5KaApibU5wYzJOdk1SWXdGQVlEVlFRS0V3MXVaWFpsY21keVpXVnVMbTVzTVJrd0Z3WURWUVFERXhCallTNXVaWFpsCmNtZHlaV1Z1TG01c01Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRVd2UVhtSTUwTW5vcFBoUTMKRUY1ZUt4eldCRkVtNUFPclRlMmtWdFEzTVdQb2R6dUgrSGVuczkwWUw2VzRhdXdSK1NIeHd3eTNiRENLaVJBZQpzcE0zOTZOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbU1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUNCZ2dyCkJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUNrR0ExVWREZ1FpQkNCS2lBbE1VWE8wTktIZXBKT3kKSG1DTjNHeDM3bVBhUkd2UW9OQkppcmpEY1RBS0JnZ3Foa2pPUFFRREFnTklBREJGQWlFQXJqRjV5YW5yengrcgozM3hDWlNXTEE5M1dLNDdLTCtLdEw5UXIrYmxobGpjQ0lCcFc2UC9WbDJUMm40cnJWeFJSdnA5QkV4ZWd4ckl1CmdiVkpNSTBJMTJQbwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "organizational_unit_identifier": "admin"
+                      },
+                      "client_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNSVENDQWV1Z0F3SUJBZ0lRSnlNbUpzOUljM0pCdGJWdm52cEJ6akFLQmdncWhrak9QUVFEQWpCdE1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVdNQlFHQTFVRUNoTU5ibVYyWlhKbmNtVmxiaTV1YkRFWk1CY0dBMVVFQXhNUVkyRXVibVYyClpYSm5jbVZsYmk1dWJEQWVGdzB5TURBMU1UVXhPRFEyTURCYUZ3MHpNREExTVRNeE9EUTJNREJhTUcweEN6QUoKQmdOVkJBWVRBbFZUTVJNd0VRWURWUVFJRXdwRFlXeHBabTl5Ym1saE1SWXdGQVlEVlFRSEV3MVRZVzRnUm5KaApibU5wYzJOdk1SWXdGQVlEVlFRS0V3MXVaWFpsY21keVpXVnVMbTVzTVJrd0Z3WURWUVFERXhCallTNXVaWFpsCmNtZHlaV1Z1TG01c01Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRVd2UVhtSTUwTW5vcFBoUTMKRUY1ZUt4eldCRkVtNUFPclRlMmtWdFEzTVdQb2R6dUgrSGVuczkwWUw2VzRhdXdSK1NIeHd3eTNiRENLaVJBZQpzcE0zOTZOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbU1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUNCZ2dyCkJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUNrR0ExVWREZ1FpQkNCS2lBbE1VWE8wTktIZXBKT3kKSG1DTjNHeDM3bVBhUkd2UW9OQkppcmpEY1RBS0JnZ3Foa2pPUFFRREFnTklBREJGQWlFQXJqRjV5YW5yengrcgozM3hDWlNXTEE5M1dLNDdLTCtLdEw5UXIrYmxobGpjQ0lCcFc2UC9WbDJUMm40cnJWeFJSdnA5QkV4ZWd4ckl1CmdiVkpNSTBJMTJQbwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "organizational_unit_identifier": "client"
+                      },
+                      "enable": true,
+                      "orderer_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNSVENDQWV1Z0F3SUJBZ0lRSnlNbUpzOUljM0pCdGJWdm52cEJ6akFLQmdncWhrak9QUVFEQWpCdE1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVdNQlFHQTFVRUNoTU5ibVYyWlhKbmNtVmxiaTV1YkRFWk1CY0dBMVVFQXhNUVkyRXVibVYyClpYSm5jbVZsYmk1dWJEQWVGdzB5TURBMU1UVXhPRFEyTURCYUZ3MHpNREExTVRNeE9EUTJNREJhTUcweEN6QUoKQmdOVkJBWVRBbFZUTVJNd0VRWURWUVFJRXdwRFlXeHBabTl5Ym1saE1SWXdGQVlEVlFRSEV3MVRZVzRnUm5KaApibU5wYzJOdk1SWXdGQVlEVlFRS0V3MXVaWFpsY21keVpXVnVMbTVzTVJrd0Z3WURWUVFERXhCallTNXVaWFpsCmNtZHlaV1Z1TG01c01Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRVd2UVhtSTUwTW5vcFBoUTMKRUY1ZUt4eldCRkVtNUFPclRlMmtWdFEzTVdQb2R6dUgrSGVuczkwWUw2VzRhdXdSK1NIeHd3eTNiRENLaVJBZQpzcE0zOTZOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbU1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUNCZ2dyCkJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUNrR0ExVWREZ1FpQkNCS2lBbE1VWE8wTktIZXBKT3kKSG1DTjNHeDM3bVBhUkd2UW9OQkppcmpEY1RBS0JnZ3Foa2pPUFFRREFnTklBREJGQWlFQXJqRjV5YW5yengrcgozM3hDWlNXTEE5M1dLNDdLTCtLdEw5UXIrYmxobGpjQ0lCcFc2UC9WbDJUMm40cnJWeFJSdnA5QkV4ZWd4ckl1CmdiVkpNSTBJMTJQbwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "organizational_unit_identifier": "orderer"
+                      },
+                      "peer_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNSVENDQWV1Z0F3SUJBZ0lRSnlNbUpzOUljM0pCdGJWdm52cEJ6akFLQmdncWhrak9QUVFEQWpCdE1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVdNQlFHQTFVRUNoTU5ibVYyWlhKbmNtVmxiaTV1YkRFWk1CY0dBMVVFQXhNUVkyRXVibVYyClpYSm5jbVZsYmk1dWJEQWVGdzB5TURBMU1UVXhPRFEyTURCYUZ3MHpNREExTVRNeE9EUTJNREJhTUcweEN6QUoKQmdOVkJBWVRBbFZUTVJNd0VRWURWUVFJRXdwRFlXeHBabTl5Ym1saE1SWXdGQVlEVlFRSEV3MVRZVzRnUm5KaApibU5wYzJOdk1SWXdGQVlEVlFRS0V3MXVaWFpsY21keVpXVnVMbTVzTVJrd0Z3WURWUVFERXhCallTNXVaWFpsCmNtZHlaV1Z1TG01c01Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRVd2UVhtSTUwTW5vcFBoUTMKRUY1ZUt4eldCRkVtNUFPclRlMmtWdFEzTVdQb2R6dUgrSGVuczkwWUw2VzRhdXdSK1NIeHd3eTNiRENLaVJBZQpzcE0zOTZOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbU1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUNCZ2dyCkJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUNrR0ExVWREZ1FpQkNCS2lBbE1VWE8wTktIZXBKT3kKSG1DTjNHeDM3bVBhUkd2UW9OQkppcmpEY1RBS0JnZ3Foa2pPUFFRREFnTklBREJGQWlFQXJqRjV5YW5yengrcgozM3hDWlNXTEE5M1dLNDdLTCtLdEw5UXIrYmxobGpjQ0lCcFc2UC9WbDJUMm40cnJWeFJSdnA5QkV4ZWd4ckl1CmdiVkpNSTBJMTJQbwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "organizational_unit_identifier": "peer"
+                      }
+                    },
+                    "intermediate_certs": [],
+                    "name": "NevergreenMSP",
+                    "organizational_unit_identifiers": [],
+                    "revocation_list": [],
+                    "root_certs": [
+                      "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNSVENDQWV1Z0F3SUJBZ0lRSnlNbUpzOUljM0pCdGJWdm52cEJ6akFLQmdncWhrak9QUVFEQWpCdE1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVdNQlFHQTFVRUNoTU5ibVYyWlhKbmNtVmxiaTV1YkRFWk1CY0dBMVVFQXhNUVkyRXVibVYyClpYSm5jbVZsYmk1dWJEQWVGdzB5TURBMU1UVXhPRFEyTURCYUZ3MHpNREExTVRNeE9EUTJNREJhTUcweEN6QUoKQmdOVkJBWVRBbFZUTVJNd0VRWURWUVFJRXdwRFlXeHBabTl5Ym1saE1SWXdGQVlEVlFRSEV3MVRZVzRnUm5KaApibU5wYzJOdk1SWXdGQVlEVlFRS0V3MXVaWFpsY21keVpXVnVMbTVzTVJrd0Z3WURWUVFERXhCallTNXVaWFpsCmNtZHlaV1Z1TG01c01Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRVd2UVhtSTUwTW5vcFBoUTMKRUY1ZUt4eldCRkVtNUFPclRlMmtWdFEzTVdQb2R6dUgrSGVuczkwWUw2VzRhdXdSK1NIeHd3eTNiRENLaVJBZQpzcE0zOTZOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbU1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUNCZ2dyCkJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUNrR0ExVWREZ1FpQkNCS2lBbE1VWE8wTktIZXBKT3kKSG1DTjNHeDM3bVBhUkd2UW9OQkppcmpEY1RBS0JnZ3Foa2pPUFFRREFnTklBREJGQWlFQXJqRjV5YW5yengrcgozM3hDWlNXTEE5M1dLNDdLTCtLdEw5UXIrYmxobGpjQ0lCcFc2UC9WbDJUMm40cnJWeFJSdnA5QkV4ZWd4ckl1CmdiVkpNSTBJMTJQbwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="
+                    ],
+                    "signing_identity": null,
+                    "tls_intermediate_certs": [],
+                    "tls_root_certs": [
+                      "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNTekNDQWZHZ0F3SUJBZ0lRUWRHVFZYVEp2ZzNVWTM4R0diY1d2akFLQmdncWhrak9QUVFEQWpCd01Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVdNQlFHQTFVRUNoTU5ibVYyWlhKbmNtVmxiaTV1YkRFY01Cb0dBMVVFQXhNVGRHeHpZMkV1CmJtVjJaWEpuY21WbGJpNXViREFlRncweU1EQTFNVFV4T0RRMk1EQmFGdzB6TURBMU1UTXhPRFEyTURCYU1IQXgKQ3pBSkJnTlZCQVlUQWxWVE1STXdFUVlEVlFRSUV3cERZV3hwWm05eWJtbGhNUll3RkFZRFZRUUhFdzFUWVc0ZwpSbkpoYm1OcGMyTnZNUll3RkFZRFZRUUtFdzF1WlhabGNtZHlaV1Z1TG01c01Sd3dHZ1lEVlFRREV4TjBiSE5qCllTNXVaWFpsY21keVpXVnVMbTVzTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFeTdaN1I0Y3QKZWdaMEFrUkFpN3U2T0l5RG45VUs1R1UvdExNbkhyL2N2VnI2THRmanloTjdnRXROL2E3YlRHYm1VR2FLQ0JITQpwMjlJMHVrUlhBeTBQNk50TUdzd0RnWURWUjBQQVFIL0JBUURBZ0dtTUIwR0ExVWRKUVFXTUJRR0NDc0dBUVVGCkJ3TUNCZ2dyQmdFRkJRY0RBVEFQQmdOVkhSTUJBZjhFQlRBREFRSC9NQ2tHQTFVZERnUWlCQ0F0bVNpcHlsdlUKQnR4akprSHdXSERSOVprTjZJbHhaRk1hdThiMUdXemdxekFLQmdncWhrak9QUVFEQWdOSUFEQkZBaUVBbW5QcQoxSmd6emtJK3ROaGswbjZrMW03OFI3OE8vQitXTFJmNVRxeEtMK01DSUZhZS9BWXdnZjNHQU5WVmVlRkVjcXNtCkh0VW5JL3ZzME5FMGN0aTV2Q0lQCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+                    ]
+                  },
+                  "type": 0
+                },
+                "version": "0"
+              }
+            },
+            "version": "1"
+          }
+        },
+        "mod_policy": "Admins",
+        "policies": {
+          "Admins": {
+            "mod_policy": "Admins",
+            "policy": {
+              "type": 3,
+              "value": {
+                "rule": "MAJORITY",
+                "sub_policy": "Admins"
+              }
+            },
+            "version": "0"
+          },
+          "Readers": {
+            "mod_policy": "Admins",
+            "policy": {
+              "type": 3,
+              "value": {
+                "rule": "ANY",
+                "sub_policy": "Readers"
+              }
+            },
+            "version": "0"
+          },
+          "Writers": {
+            "mod_policy": "Admins",
+            "policy": {
+              "type": 3,
+              "value": {
+                "rule": "ANY",
+                "sub_policy": "Writers"
+              }
+            },
+            "version": "0"
+          }
+        },
+        "values": {
+          "Capabilities": {
+            "mod_policy": "Admins",
+            "value": {
+              "capabilities": {
+                "V1_4_2": {}
+              }
+            },
+            "version": "0"
+          }
+        },
+        "version": "1"
+      },
+      "Orderer": {
+        "groups": {
+          "GroeifabriekMSP": {
+            "groups": {},
+            "mod_policy": "Admins",
+            "policies": {
+              "Admins": {
+                "mod_policy": "Admins",
+                "policy": {
+                  "type": 1,
+                  "value": {
+                    "identities": [
+                      {
+                        "principal": {
+                          "msp_identifier": "GroeifabriekMSP",
+                          "role": "ADMIN"
+                        },
+                        "principal_classification": "ROLE"
+                      }
+                    ],
+                    "rule": {
+                      "n_out_of": {
+                        "n": 1,
+                        "rules": [
+                          {
+                            "signed_by": 0
+                          }
+                        ]
+                      }
+                    },
+                    "version": 0
+                  }
+                },
+                "version": "0"
+              },
+              "Readers": {
+                "mod_policy": "Admins",
+                "policy": {
+                  "type": 1,
+                  "value": {
+                    "identities": [
+                      {
+                        "principal": {
+                          "msp_identifier": "GroeifabriekMSP",
+                          "role": "MEMBER"
+                        },
+                        "principal_classification": "ROLE"
+                      }
+                    ],
+                    "rule": {
+                      "n_out_of": {
+                        "n": 1,
+                        "rules": [
+                          {
+                            "signed_by": 0
+                          }
+                        ]
+                      }
+                    },
+                    "version": 0
+                  }
+                },
+                "version": "0"
+              },
+              "Writers": {
+                "mod_policy": "Admins",
+                "policy": {
+                  "type": 1,
+                  "value": {
+                    "identities": [
+                      {
+                        "principal": {
+                          "msp_identifier": "GroeifabriekMSP",
+                          "role": "MEMBER"
+                        },
+                        "principal_classification": "ROLE"
+                      }
+                    ],
+                    "rule": {
+                      "n_out_of": {
+                        "n": 1,
+                        "rules": [
+                          {
+                            "signed_by": 0
+                          }
+                        ]
+                      }
+                    },
+                    "version": 0
+                  }
+                },
+                "version": "0"
+              }
+            },
+            "values": {
+              "MSP": {
+                "mod_policy": "Admins",
+                "value": {
+                  "config": {
+                    "admins": [],
+                    "crypto_config": {
+                      "identity_identifier_hash_function": "SHA256",
+                      "signature_hash_family": "SHA2"
+                    },
+                    "fabric_node_ous": {
+                      "admin_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNUVENDQWZTZ0F3SUJBZ0lSQUlPN2FjbmZvUSs3S1crSjMwek1MVm93Q2dZSUtvWkl6ajBFQXdJd2NURUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhHREFXQmdOVkJBb1REMmR5YjJWcFptRmljbWxsYXk1dWJERWJNQmtHQTFVRUF4TVNZMkV1ClozSnZaV2xtWVdKeWFXVnJMbTVzTUI0WERUSXdNRFV4TlRFNE5EVXdNRm9YRFRNd01EVXhNekU0TkRVd01Gb3cKY1RFTE1Ba0dBMVVFQmhNQ1ZWTXhFekFSQmdOVkJBZ1RDa05oYkdsbWIzSnVhV0V4RmpBVUJnTlZCQWNURFZOaApiaUJHY21GdVkybHpZMjh4R0RBV0JnTlZCQW9URDJkeWIyVnBabUZpY21sbGF5NXViREViTUJrR0ExVUVBeE1TClkyRXVaM0p2WldsbVlXSnlhV1ZyTG01c01Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRVhkRk4KRDcza29sRkVaR2VNZ0RZT1FPUzkrcGhWRThyZm1oT3Q0Ry9xbE1PZm1wUGduWVVNdnFYQ0tjd2dkYmxUQmh3RQpTdldVb0pMcXdLUitRRTNHQjZOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbU1CMEdBMVVkSlFRV01CUUdDQ3NHCkFRVUZCd01DQmdnckJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUNrR0ExVWREZ1FpQkNCWkFKVmwKUUFmUFFDekdENTZKQnJHbTVNc2hVUUJETnNDVFg4bmNJaVVSZGpBS0JnZ3Foa2pPUFFRREFnTkhBREJFQWlCUApVZ1FOdVNVUnp6dmFKWStvZm1uUFhDK2tpZm5hSFlIY012WUd2ZW9FZ1FJZ1NmK0hOUlVwNVpZNDNpR2xMc3VBClJ3S0FDUWE1SURtSFZWWnd2MkdTN1lFPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "organizational_unit_identifier": "admin"
+                      },
+                      "client_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNUVENDQWZTZ0F3SUJBZ0lSQUlPN2FjbmZvUSs3S1crSjMwek1MVm93Q2dZSUtvWkl6ajBFQXdJd2NURUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhHREFXQmdOVkJBb1REMmR5YjJWcFptRmljbWxsYXk1dWJERWJNQmtHQTFVRUF4TVNZMkV1ClozSnZaV2xtWVdKeWFXVnJMbTVzTUI0WERUSXdNRFV4TlRFNE5EVXdNRm9YRFRNd01EVXhNekU0TkRVd01Gb3cKY1RFTE1Ba0dBMVVFQmhNQ1ZWTXhFekFSQmdOVkJBZ1RDa05oYkdsbWIzSnVhV0V4RmpBVUJnTlZCQWNURFZOaApiaUJHY21GdVkybHpZMjh4R0RBV0JnTlZCQW9URDJkeWIyVnBabUZpY21sbGF5NXViREViTUJrR0ExVUVBeE1TClkyRXVaM0p2WldsbVlXSnlhV1ZyTG01c01Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRVhkRk4KRDcza29sRkVaR2VNZ0RZT1FPUzkrcGhWRThyZm1oT3Q0Ry9xbE1PZm1wUGduWVVNdnFYQ0tjd2dkYmxUQmh3RQpTdldVb0pMcXdLUitRRTNHQjZOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbU1CMEdBMVVkSlFRV01CUUdDQ3NHCkFRVUZCd01DQmdnckJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUNrR0ExVWREZ1FpQkNCWkFKVmwKUUFmUFFDekdENTZKQnJHbTVNc2hVUUJETnNDVFg4bmNJaVVSZGpBS0JnZ3Foa2pPUFFRREFnTkhBREJFQWlCUApVZ1FOdVNVUnp6dmFKWStvZm1uUFhDK2tpZm5hSFlIY012WUd2ZW9FZ1FJZ1NmK0hOUlVwNVpZNDNpR2xMc3VBClJ3S0FDUWE1SURtSFZWWnd2MkdTN1lFPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "organizational_unit_identifier": "client"
+                      },
+                      "enable": true,
+                      "orderer_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNUVENDQWZTZ0F3SUJBZ0lSQUlPN2FjbmZvUSs3S1crSjMwek1MVm93Q2dZSUtvWkl6ajBFQXdJd2NURUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhHREFXQmdOVkJBb1REMmR5YjJWcFptRmljbWxsYXk1dWJERWJNQmtHQTFVRUF4TVNZMkV1ClozSnZaV2xtWVdKeWFXVnJMbTVzTUI0WERUSXdNRFV4TlRFNE5EVXdNRm9YRFRNd01EVXhNekU0TkRVd01Gb3cKY1RFTE1Ba0dBMVVFQmhNQ1ZWTXhFekFSQmdOVkJBZ1RDa05oYkdsbWIzSnVhV0V4RmpBVUJnTlZCQWNURFZOaApiaUJHY21GdVkybHpZMjh4R0RBV0JnTlZCQW9URDJkeWIyVnBabUZpY21sbGF5NXViREViTUJrR0ExVUVBeE1TClkyRXVaM0p2WldsbVlXSnlhV1ZyTG01c01Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRVhkRk4KRDcza29sRkVaR2VNZ0RZT1FPUzkrcGhWRThyZm1oT3Q0Ry9xbE1PZm1wUGduWVVNdnFYQ0tjd2dkYmxUQmh3RQpTdldVb0pMcXdLUitRRTNHQjZOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbU1CMEdBMVVkSlFRV01CUUdDQ3NHCkFRVUZCd01DQmdnckJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUNrR0ExVWREZ1FpQkNCWkFKVmwKUUFmUFFDekdENTZKQnJHbTVNc2hVUUJETnNDVFg4bmNJaVVSZGpBS0JnZ3Foa2pPUFFRREFnTkhBREJFQWlCUApVZ1FOdVNVUnp6dmFKWStvZm1uUFhDK2tpZm5hSFlIY012WUd2ZW9FZ1FJZ1NmK0hOUlVwNVpZNDNpR2xMc3VBClJ3S0FDUWE1SURtSFZWWnd2MkdTN1lFPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "organizational_unit_identifier": "orderer"
+                      },
+                      "peer_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNUVENDQWZTZ0F3SUJBZ0lSQUlPN2FjbmZvUSs3S1crSjMwek1MVm93Q2dZSUtvWkl6ajBFQXdJd2NURUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhHREFXQmdOVkJBb1REMmR5YjJWcFptRmljbWxsYXk1dWJERWJNQmtHQTFVRUF4TVNZMkV1ClozSnZaV2xtWVdKeWFXVnJMbTVzTUI0WERUSXdNRFV4TlRFNE5EVXdNRm9YRFRNd01EVXhNekU0TkRVd01Gb3cKY1RFTE1Ba0dBMVVFQmhNQ1ZWTXhFekFSQmdOVkJBZ1RDa05oYkdsbWIzSnVhV0V4RmpBVUJnTlZCQWNURFZOaApiaUJHY21GdVkybHpZMjh4R0RBV0JnTlZCQW9URDJkeWIyVnBabUZpY21sbGF5NXViREViTUJrR0ExVUVBeE1TClkyRXVaM0p2WldsbVlXSnlhV1ZyTG01c01Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRVhkRk4KRDcza29sRkVaR2VNZ0RZT1FPUzkrcGhWRThyZm1oT3Q0Ry9xbE1PZm1wUGduWVVNdnFYQ0tjd2dkYmxUQmh3RQpTdldVb0pMcXdLUitRRTNHQjZOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbU1CMEdBMVVkSlFRV01CUUdDQ3NHCkFRVUZCd01DQmdnckJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUNrR0ExVWREZ1FpQkNCWkFKVmwKUUFmUFFDekdENTZKQnJHbTVNc2hVUUJETnNDVFg4bmNJaVVSZGpBS0JnZ3Foa2pPUFFRREFnTkhBREJFQWlCUApVZ1FOdVNVUnp6dmFKWStvZm1uUFhDK2tpZm5hSFlIY012WUd2ZW9FZ1FJZ1NmK0hOUlVwNVpZNDNpR2xMc3VBClJ3S0FDUWE1SURtSFZWWnd2MkdTN1lFPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "organizational_unit_identifier": "peer"
+                      }
+                    },
+                    "intermediate_certs": [],
+                    "name": "GroeifabriekMSP",
+                    "organizational_unit_identifiers": [],
+                    "revocation_list": [],
+                    "root_certs": [
+                      "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNUVENDQWZTZ0F3SUJBZ0lSQUlPN2FjbmZvUSs3S1crSjMwek1MVm93Q2dZSUtvWkl6ajBFQXdJd2NURUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhHREFXQmdOVkJBb1REMmR5YjJWcFptRmljbWxsYXk1dWJERWJNQmtHQTFVRUF4TVNZMkV1ClozSnZaV2xtWVdKeWFXVnJMbTVzTUI0WERUSXdNRFV4TlRFNE5EVXdNRm9YRFRNd01EVXhNekU0TkRVd01Gb3cKY1RFTE1Ba0dBMVVFQmhNQ1ZWTXhFekFSQmdOVkJBZ1RDa05oYkdsbWIzSnVhV0V4RmpBVUJnTlZCQWNURFZOaApiaUJHY21GdVkybHpZMjh4R0RBV0JnTlZCQW9URDJkeWIyVnBabUZpY21sbGF5NXViREViTUJrR0ExVUVBeE1TClkyRXVaM0p2WldsbVlXSnlhV1ZyTG01c01Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRVhkRk4KRDcza29sRkVaR2VNZ0RZT1FPUzkrcGhWRThyZm1oT3Q0Ry9xbE1PZm1wUGduWVVNdnFYQ0tjd2dkYmxUQmh3RQpTdldVb0pMcXdLUitRRTNHQjZOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbU1CMEdBMVVkSlFRV01CUUdDQ3NHCkFRVUZCd01DQmdnckJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUNrR0ExVWREZ1FpQkNCWkFKVmwKUUFmUFFDekdENTZKQnJHbTVNc2hVUUJETnNDVFg4bmNJaVVSZGpBS0JnZ3Foa2pPUFFRREFnTkhBREJFQWlCUApVZ1FOdVNVUnp6dmFKWStvZm1uUFhDK2tpZm5hSFlIY012WUd2ZW9FZ1FJZ1NmK0hOUlVwNVpZNDNpR2xMc3VBClJ3S0FDUWE1SURtSFZWWnd2MkdTN1lFPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="
+                    ],
+                    "signing_identity": null,
+                    "tls_intermediate_certs": [],
+                    "tls_root_certs": [
+                      "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNVakNDQWZtZ0F3SUJBZ0lRVVowZk9CTFhiOUFRUEk2VkZob3kxekFLQmdncWhrak9QUVFEQWpCME1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVlNQllHQTFVRUNoTVBaM0p2WldsbVlXSnlhV1ZyTG01c01SNHdIQVlEVlFRREV4VjBiSE5qCllTNW5jbTlsYVdaaFluSnBaV3N1Ym13d0hoY05NakF3TlRFMU1UZzBOVEF3V2hjTk16QXdOVEV6TVRnME5UQXcKV2pCME1Rc3dDUVlEVlFRR0V3SlZVekVUTUJFR0ExVUVDQk1LUTJGc2FXWnZjbTVwWVRFV01CUUdBMVVFQnhNTgpVMkZ1SUVaeVlXNWphWE5qYnpFWU1CWUdBMVVFQ2hNUFozSnZaV2xtWVdKeWFXVnJMbTVzTVI0d0hBWURWUVFECkV4VjBiSE5qWVM1bmNtOWxhV1poWW5KcFpXc3VibXd3V1RBVEJnY3Foa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkMKQUFRTmJ2TElXeHFKbFluUHd4eEQ3azRwRitJWWxJTTBuelFOelFQZkpXcE1rQnZzZGU0MEtLMVJlc1ZBOGx2UQpCUExjek5XT2R4VDNwekZkRGRCUWRaWWlvMjB3YXpBT0JnTlZIUThCQWY4RUJBTUNBYVl3SFFZRFZSMGxCQll3CkZBWUlLd1lCQlFVSEF3SUdDQ3NHQVFVRkJ3TUJNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdLUVlEVlIwT0JDSUUKSUFySlhNbHc1SkxOdzNWVGYvem5aS2hKNU10NTl3MnhBR0xTTWZMV1hWMmZNQW9HQ0NxR1NNNDlCQU1DQTBjQQpNRVFDSUNsSFErcWVyMklDcC82RS9oNFNxd2lkNFgrclh2cHZkRnpJUWxwQ05RNkVBaUE5UXk4WE9xSEd3VktZClhDdHdCdVhQS09icXZzdlRVQ3dJeHRNRWFLWGUrQT09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+                    ]
+                  },
+                  "type": 0
+                },
+                "version": "0"
+              }
+            },
+            "version": "0"
+          },
+          "PivtMSP": {
+            "groups": {},
+            "mod_policy": "Admins",
+            "policies": {
+              "Admins": {
+                "mod_policy": "Admins",
+                "policy": {
+                  "type": 1,
+                  "value": {
+                    "identities": [
+                      {
+                        "principal": {
+                          "msp_identifier": "PivtMSP",
+                          "role": "ADMIN"
+                        },
+                        "principal_classification": "ROLE"
+                      }
+                    ],
+                    "rule": {
+                      "n_out_of": {
+                        "n": 1,
+                        "rules": [
+                          {
+                            "signed_by": 0
+                          }
+                        ]
+                      }
+                    },
+                    "version": 0
+                  }
+                },
+                "version": "0"
+              },
+              "Readers": {
+                "mod_policy": "Admins",
+                "policy": {
+                  "type": 1,
+                  "value": {
+                    "identities": [
+                      {
+                        "principal": {
+                          "msp_identifier": "PivtMSP",
+                          "role": "MEMBER"
+                        },
+                        "principal_classification": "ROLE"
+                      }
+                    ],
+                    "rule": {
+                      "n_out_of": {
+                        "n": 1,
+                        "rules": [
+                          {
+                            "signed_by": 0
+                          }
+                        ]
+                      }
+                    },
+                    "version": 0
+                  }
+                },
+                "version": "0"
+              },
+              "Writers": {
+                "mod_policy": "Admins",
+                "policy": {
+                  "type": 1,
+                  "value": {
+                    "identities": [
+                      {
+                        "principal": {
+                          "msp_identifier": "PivtMSP",
+                          "role": "MEMBER"
+                        },
+                        "principal_classification": "ROLE"
+                      }
+                    ],
+                    "rule": {
+                      "n_out_of": {
+                        "n": 1,
+                        "rules": [
+                          {
+                            "signed_by": 0
+                          }
+                        ]
+                      }
+                    },
+                    "version": 0
+                  }
+                },
+                "version": "0"
+              }
+            },
+            "values": {
+              "MSP": {
+                "mod_policy": "Admins",
+                "value": {
+                  "config": {
+                    "admins": [],
+                    "crypto_config": {
+                      "identity_identifier_hash_function": "SHA256",
+                      "signature_hash_family": "SHA2"
+                    },
+                    "fabric_node_ous": {
+                      "admin_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNMRENDQWRPZ0F3SUJBZ0lRUjdEWUFtT3NMWFVmbXVWdjFzZUZzVEFLQmdncWhrak9QUVFEQWpCaE1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVFNQTRHQTFVRUNoTUhjR2wyZEM1dWJERVRNQkVHQTFVRUF4TUtZMkV1Y0dsMmRDNXViREFlCkZ3MHlNREExTVRVeE9EUTJNREJhRncwek1EQTFNVE14T0RRMk1EQmFNR0V4Q3pBSkJnTlZCQVlUQWxWVE1STXcKRVFZRFZRUUlFd3BEWVd4cFptOXlibWxoTVJZd0ZBWURWUVFIRXcxVFlXNGdSbkpoYm1OcGMyTnZNUkF3RGdZRApWUVFLRXdkd2FYWjBMbTVzTVJNd0VRWURWUVFERXdwallTNXdhWFowTG01c01Ga3dFd1lIS29aSXpqMENBUVlJCktvWkl6ajBEQVFjRFFnQUVHek5RUEozS2ZzOXI3UzdXTnlua2U1UFhZb1JlR3Fyek1EbGdxUVAvcExoMGxQUDgKMGI3YVpTOS92eXYxMDRaYzN3MGNiWllBK3publRUUE9ZWVZRZktOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbQpNQjBHQTFVZEpRUVdNQlFHQ0NzR0FRVUZCd01DQmdnckJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvCk1Da0dBMVVkRGdRaUJDQUI5NWFqcWJCR1lDOW9McDdNWXU5MlZxYmp4OU5zS1BpU0xoa0N1VExnUHpBS0JnZ3EKaGtqT1BRUURBZ05IQURCRUFpQUNONjNuV3BSVi9lSWd1eGdFVnd6azNoMzBtdmhVYllYVnZqWmMwNGFkR3dJZwpGVndCQXU2Y0RZU0RFUWZXc3JSam9WN2kzTnFxSlNTS21mL2cvTW52MEFrPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "organizational_unit_identifier": "admin"
+                      },
+                      "client_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNMRENDQWRPZ0F3SUJBZ0lRUjdEWUFtT3NMWFVmbXVWdjFzZUZzVEFLQmdncWhrak9QUVFEQWpCaE1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVFNQTRHQTFVRUNoTUhjR2wyZEM1dWJERVRNQkVHQTFVRUF4TUtZMkV1Y0dsMmRDNXViREFlCkZ3MHlNREExTVRVeE9EUTJNREJhRncwek1EQTFNVE14T0RRMk1EQmFNR0V4Q3pBSkJnTlZCQVlUQWxWVE1STXcKRVFZRFZRUUlFd3BEWVd4cFptOXlibWxoTVJZd0ZBWURWUVFIRXcxVFlXNGdSbkpoYm1OcGMyTnZNUkF3RGdZRApWUVFLRXdkd2FYWjBMbTVzTVJNd0VRWURWUVFERXdwallTNXdhWFowTG01c01Ga3dFd1lIS29aSXpqMENBUVlJCktvWkl6ajBEQVFjRFFnQUVHek5RUEozS2ZzOXI3UzdXTnlua2U1UFhZb1JlR3Fyek1EbGdxUVAvcExoMGxQUDgKMGI3YVpTOS92eXYxMDRaYzN3MGNiWllBK3publRUUE9ZWVZRZktOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbQpNQjBHQTFVZEpRUVdNQlFHQ0NzR0FRVUZCd01DQmdnckJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvCk1Da0dBMVVkRGdRaUJDQUI5NWFqcWJCR1lDOW9McDdNWXU5MlZxYmp4OU5zS1BpU0xoa0N1VExnUHpBS0JnZ3EKaGtqT1BRUURBZ05IQURCRUFpQUNONjNuV3BSVi9lSWd1eGdFVnd6azNoMzBtdmhVYllYVnZqWmMwNGFkR3dJZwpGVndCQXU2Y0RZU0RFUWZXc3JSam9WN2kzTnFxSlNTS21mL2cvTW52MEFrPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "organizational_unit_identifier": "client"
+                      },
+                      "enable": true,
+                      "orderer_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNMRENDQWRPZ0F3SUJBZ0lRUjdEWUFtT3NMWFVmbXVWdjFzZUZzVEFLQmdncWhrak9QUVFEQWpCaE1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVFNQTRHQTFVRUNoTUhjR2wyZEM1dWJERVRNQkVHQTFVRUF4TUtZMkV1Y0dsMmRDNXViREFlCkZ3MHlNREExTVRVeE9EUTJNREJhRncwek1EQTFNVE14T0RRMk1EQmFNR0V4Q3pBSkJnTlZCQVlUQWxWVE1STXcKRVFZRFZRUUlFd3BEWVd4cFptOXlibWxoTVJZd0ZBWURWUVFIRXcxVFlXNGdSbkpoYm1OcGMyTnZNUkF3RGdZRApWUVFLRXdkd2FYWjBMbTVzTVJNd0VRWURWUVFERXdwallTNXdhWFowTG01c01Ga3dFd1lIS29aSXpqMENBUVlJCktvWkl6ajBEQVFjRFFnQUVHek5RUEozS2ZzOXI3UzdXTnlua2U1UFhZb1JlR3Fyek1EbGdxUVAvcExoMGxQUDgKMGI3YVpTOS92eXYxMDRaYzN3MGNiWllBK3publRUUE9ZWVZRZktOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbQpNQjBHQTFVZEpRUVdNQlFHQ0NzR0FRVUZCd01DQmdnckJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvCk1Da0dBMVVkRGdRaUJDQUI5NWFqcWJCR1lDOW9McDdNWXU5MlZxYmp4OU5zS1BpU0xoa0N1VExnUHpBS0JnZ3EKaGtqT1BRUURBZ05IQURCRUFpQUNONjNuV3BSVi9lSWd1eGdFVnd6azNoMzBtdmhVYllYVnZqWmMwNGFkR3dJZwpGVndCQXU2Y0RZU0RFUWZXc3JSam9WN2kzTnFxSlNTS21mL2cvTW52MEFrPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "organizational_unit_identifier": "orderer"
+                      },
+                      "peer_ou_identifier": {
+                        "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNMRENDQWRPZ0F3SUJBZ0lRUjdEWUFtT3NMWFVmbXVWdjFzZUZzVEFLQmdncWhrak9QUVFEQWpCaE1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVFNQTRHQTFVRUNoTUhjR2wyZEM1dWJERVRNQkVHQTFVRUF4TUtZMkV1Y0dsMmRDNXViREFlCkZ3MHlNREExTVRVeE9EUTJNREJhRncwek1EQTFNVE14T0RRMk1EQmFNR0V4Q3pBSkJnTlZCQVlUQWxWVE1STXcKRVFZRFZRUUlFd3BEWVd4cFptOXlibWxoTVJZd0ZBWURWUVFIRXcxVFlXNGdSbkpoYm1OcGMyTnZNUkF3RGdZRApWUVFLRXdkd2FYWjBMbTVzTVJNd0VRWURWUVFERXdwallTNXdhWFowTG01c01Ga3dFd1lIS29aSXpqMENBUVlJCktvWkl6ajBEQVFjRFFnQUVHek5RUEozS2ZzOXI3UzdXTnlua2U1UFhZb1JlR3Fyek1EbGdxUVAvcExoMGxQUDgKMGI3YVpTOS92eXYxMDRaYzN3MGNiWllBK3publRUUE9ZWVZRZktOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbQpNQjBHQTFVZEpRUVdNQlFHQ0NzR0FRVUZCd01DQmdnckJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvCk1Da0dBMVVkRGdRaUJDQUI5NWFqcWJCR1lDOW9McDdNWXU5MlZxYmp4OU5zS1BpU0xoa0N1VExnUHpBS0JnZ3EKaGtqT1BRUURBZ05IQURCRUFpQUNONjNuV3BSVi9lSWd1eGdFVnd6azNoMzBtdmhVYllYVnZqWmMwNGFkR3dJZwpGVndCQXU2Y0RZU0RFUWZXc3JSam9WN2kzTnFxSlNTS21mL2cvTW52MEFrPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "organizational_unit_identifier": "peer"
+                      }
+                    },
+                    "intermediate_certs": [],
+                    "name": "PivtMSP",
+                    "organizational_unit_identifiers": [],
+                    "revocation_list": [],
+                    "root_certs": [
+                      "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNMRENDQWRPZ0F3SUJBZ0lRUjdEWUFtT3NMWFVmbXVWdjFzZUZzVEFLQmdncWhrak9QUVFEQWpCaE1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVFNQTRHQTFVRUNoTUhjR2wyZEM1dWJERVRNQkVHQTFVRUF4TUtZMkV1Y0dsMmRDNXViREFlCkZ3MHlNREExTVRVeE9EUTJNREJhRncwek1EQTFNVE14T0RRMk1EQmFNR0V4Q3pBSkJnTlZCQVlUQWxWVE1STXcKRVFZRFZRUUlFd3BEWVd4cFptOXlibWxoTVJZd0ZBWURWUVFIRXcxVFlXNGdSbkpoYm1OcGMyTnZNUkF3RGdZRApWUVFLRXdkd2FYWjBMbTVzTVJNd0VRWURWUVFERXdwallTNXdhWFowTG01c01Ga3dFd1lIS29aSXpqMENBUVlJCktvWkl6ajBEQVFjRFFnQUVHek5RUEozS2ZzOXI3UzdXTnlua2U1UFhZb1JlR3Fyek1EbGdxUVAvcExoMGxQUDgKMGI3YVpTOS92eXYxMDRaYzN3MGNiWllBK3publRUUE9ZWVZRZktOdE1Hc3dEZ1lEVlIwUEFRSC9CQVFEQWdHbQpNQjBHQTFVZEpRUVdNQlFHQ0NzR0FRVUZCd01DQmdnckJnRUZCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvCk1Da0dBMVVkRGdRaUJDQUI5NWFqcWJCR1lDOW9McDdNWXU5MlZxYmp4OU5zS1BpU0xoa0N1VExnUHpBS0JnZ3EKaGtqT1BRUURBZ05IQURCRUFpQUNONjNuV3BSVi9lSWd1eGdFVnd6azNoMzBtdmhVYllYVnZqWmMwNGFkR3dJZwpGVndCQXU2Y0RZU0RFUWZXc3JSam9WN2kzTnFxSlNTS21mL2cvTW52MEFrPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="
+                    ],
+                    "signing_identity": null,
+                    "tls_intermediate_certs": [],
+                    "tls_root_certs": [
+                      "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNNakNDQWRtZ0F3SUJBZ0lRQVNCSXVFQUp3SERQMVFYQ0FhOCtpakFLQmdncWhrak9QUVFEQWpCa01Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVFNQTRHQTFVRUNoTUhjR2wyZEM1dWJERVdNQlFHQTFVRUF4TU5kR3h6WTJFdWNHbDJkQzV1CmJEQWVGdzB5TURBMU1UVXhPRFEyTURCYUZ3MHpNREExTVRNeE9EUTJNREJhTUdReEN6QUpCZ05WQkFZVEFsVlQKTVJNd0VRWURWUVFJRXdwRFlXeHBabTl5Ym1saE1SWXdGQVlEVlFRSEV3MVRZVzRnUm5KaGJtTnBjMk52TVJBdwpEZ1lEVlFRS0V3ZHdhWFowTG01c01SWXdGQVlEVlFRREV3MTBiSE5qWVM1d2FYWjBMbTVzTUZrd0V3WUhLb1pJCnpqMENBUVlJS29aSXpqMERBUWNEUWdBRXNwQ05pWTFvNW9wQ2Mvd2ZRRW1WNEF6NlVYTkpCc0dDVDYzcUNEa1cKeXBTRW8rV1Q4MUVXL3hsOXJLK0dBSWhEeE5tTEpSOGtJUkVmVHNYTlQrSGF5Nk50TUdzd0RnWURWUjBQQVFILwpCQVFEQWdHbU1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUNCZ2dyQmdFRkJRY0RBVEFQQmdOVkhSTUJBZjhFCkJUQURBUUgvTUNrR0ExVWREZ1FpQkNCQ2I0QVJISHNlTnFyL3RGOUd0bFV3Z1A0a3VSK1hxaVBLdWFzZXllaWkKZFRBS0JnZ3Foa2pPUFFRREFnTkhBREJFQWlBYVpDQitra2FCK01hU0wrZ0dialB4M2IxbUp2N3lFTWhGclV4WQpUR3BVdndJZ0I3TEFGUms0cVJ5ekhvYVoxRkpzWGFwMUtwZVVCMk1XRjZ6K0pXREFCY2M9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+                    ]
+                  },
+                  "type": 0
+                },
+                "version": "0"
+              }
+            },
+            "version": "0"
+          }
+        },
+        "mod_policy": "Admins",
+        "policies": {
+          "Admins": {
+            "mod_policy": "Admins",
+            "policy": {
+              "type": 3,
+              "value": {
+                "rule": "MAJORITY",
+                "sub_policy": "Admins"
+              }
+            },
+            "version": "0"
+          },
+          "BlockValidation": {
+            "mod_policy": "Admins",
+            "policy": {
+              "type": 3,
+              "value": {
+                "rule": "ANY",
+                "sub_policy": "Writers"
+              }
+            },
+            "version": "0"
+          },
+          "Readers": {
+            "mod_policy": "Admins",
+            "policy": {
+              "type": 3,
+              "value": {
+                "rule": "ANY",
+                "sub_policy": "Readers"
+              }
+            },
+            "version": "0"
+          },
+          "Writers": {
+            "mod_policy": "Admins",
+            "policy": {
+              "type": 3,
+              "value": {
+                "rule": "ANY",
+                "sub_policy": "Writers"
+              }
+            },
+            "version": "0"
+          }
+        },
+        "values": {
+          "BatchSize": {
+            "mod_policy": "Admins",
+            "value": {
+              "absolute_max_bytes": 102760448,
+              "max_message_count": 5,
+              "preferred_max_bytes": 1048576
+            },
+            "version": "0"
+          },
+          "BatchTimeout": {
+            "mod_policy": "Admins",
+            "value": {
+              "timeout": "1s"
+            },
+            "version": "0"
+          },
+          "Capabilities": {
+            "mod_policy": "Admins",
+            "value": {
+              "capabilities": {
+                "V1_4_2": {}
+              }
+            },
+            "version": "0"
+          },
+          "ChannelRestrictions": {
+            "mod_policy": "Admins",
+            "value": null,
+            "version": "0"
+          },
+          "ConsensusType": {
+            "mod_policy": "Admins",
+            "value": {
+              "metadata": {
+                "consenters": [
+                  {
+                    "client_tls_cert": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNiRENDQWhLZ0F3SUJBZ0lRUVNBai80aWR2MGdQcmJ1cWJreUZCREFLQmdncWhrak9QUVFEQWpCME1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVlNQllHQTFVRUNoTVBaM0p2WldsbVlXSnlhV1ZyTG01c01SNHdIQVlEVlFRREV4VjBiSE5qCllTNW5jbTlsYVdaaFluSnBaV3N1Ym13d0hoY05NakF3TlRFMU1UZzBOVEF3V2hjTk16QXdOVEV6TVRnME5UQXcKV2pCZE1Rc3dDUVlEVlFRR0V3SlZVekVUTUJFR0ExVUVDQk1LUTJGc2FXWnZjbTVwWVRFV01CUUdBMVVFQnhNTgpVMkZ1SUVaeVlXNWphWE5qYnpFaE1COEdBMVVFQXhNWWIzSmtaWEpsY2pBdVozSnZaV2xtWVdKeWFXVnJMbTVzCk1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRUUxOEM5OEwwQTl5cU1IeXBaTE1YSUt4WUIrbjAKOXpET2QwK2JBVWVlTXdKcFdmMzhMYzd3b2d3MXZ0eXFwMlE4VlVRcGNIcm9JMTZOeEIvZGJ2b3VKNk9CbkRDQgptVEFPQmdOVkhROEJBZjhFQkFNQ0JhQXdIUVlEVlIwbEJCWXdGQVlJS3dZQkJRVUhBd0VHQ0NzR0FRVUZCd01DCk1Bd0dBMVVkRXdFQi93UUNNQUF3S3dZRFZSMGpCQ1F3SW9BZ0NzbGN5WERra3MzRGRWTi8vT2RrcUVua3kzbjMKRGJFQVl0SXg4dFpkWFo4d0xRWURWUjBSQkNZd0pJSVliM0prWlhKbGNqQXVaM0p2WldsbVlXSnlhV1ZyTG01cwpnZ2h2Y21SbGNtVnlNREFLQmdncWhrak9QUVFEQWdOSUFEQkZBaUVBaDhKVkJ1SDVwTCtoaTJYTmFMeXZiSGlxCnlvaHJhTFZqbmIwOEl1TmNrUHdDSUNERkNoQjJkSFJiYVA3bktXYkR4K2JCZEJyempUZEcybGpmdndHVVN0dnEKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=",
+                    "host": "orderer0.groeifabriek.nl",
+                    "port": 7050,
+                    "server_tls_cert": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNiRENDQWhLZ0F3SUJBZ0lRUVNBai80aWR2MGdQcmJ1cWJreUZCREFLQmdncWhrak9QUVFEQWpCME1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVlNQllHQTFVRUNoTVBaM0p2WldsbVlXSnlhV1ZyTG01c01SNHdIQVlEVlFRREV4VjBiSE5qCllTNW5jbTlsYVdaaFluSnBaV3N1Ym13d0hoY05NakF3TlRFMU1UZzBOVEF3V2hjTk16QXdOVEV6TVRnME5UQXcKV2pCZE1Rc3dDUVlEVlFRR0V3SlZVekVUTUJFR0ExVUVDQk1LUTJGc2FXWnZjbTVwWVRFV01CUUdBMVVFQnhNTgpVMkZ1SUVaeVlXNWphWE5qYnpFaE1COEdBMVVFQXhNWWIzSmtaWEpsY2pBdVozSnZaV2xtWVdKeWFXVnJMbTVzCk1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRUUxOEM5OEwwQTl5cU1IeXBaTE1YSUt4WUIrbjAKOXpET2QwK2JBVWVlTXdKcFdmMzhMYzd3b2d3MXZ0eXFwMlE4VlVRcGNIcm9JMTZOeEIvZGJ2b3VKNk9CbkRDQgptVEFPQmdOVkhROEJBZjhFQkFNQ0JhQXdIUVlEVlIwbEJCWXdGQVlJS3dZQkJRVUhBd0VHQ0NzR0FRVUZCd01DCk1Bd0dBMVVkRXdFQi93UUNNQUF3S3dZRFZSMGpCQ1F3SW9BZ0NzbGN5WERra3MzRGRWTi8vT2RrcUVua3kzbjMKRGJFQVl0SXg4dFpkWFo4d0xRWURWUjBSQkNZd0pJSVliM0prWlhKbGNqQXVaM0p2WldsbVlXSnlhV1ZyTG01cwpnZ2h2Y21SbGNtVnlNREFLQmdncWhrak9QUVFEQWdOSUFEQkZBaUVBaDhKVkJ1SDVwTCtoaTJYTmFMeXZiSGlxCnlvaHJhTFZqbmIwOEl1TmNrUHdDSUNERkNoQjJkSFJiYVA3bktXYkR4K2JCZEJyempUZEcybGpmdndHVVN0dnEKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
+                  },
+                  {
+                    "client_tls_cert": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNhekNDQWhLZ0F3SUJBZ0lRUk5LUzl3U1J5clRqcFhXRk9hdFB6ekFLQmdncWhrak9QUVFEQWpCME1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVlNQllHQTFVRUNoTVBaM0p2WldsbVlXSnlhV1ZyTG01c01SNHdIQVlEVlFRREV4VjBiSE5qCllTNW5jbTlsYVdaaFluSnBaV3N1Ym13d0hoY05NakF3TlRFMU1UZzBOVEF3V2hjTk16QXdOVEV6TVRnME5UQXcKV2pCZE1Rc3dDUVlEVlFRR0V3SlZVekVUTUJFR0ExVUVDQk1LUTJGc2FXWnZjbTVwWVRFV01CUUdBMVVFQnhNTgpVMkZ1SUVaeVlXNWphWE5qYnpFaE1COEdBMVVFQXhNWWIzSmtaWEpsY2pFdVozSnZaV2xtWVdKeWFXVnJMbTVzCk1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRTJyRTdzdDRqeFdDUXFHR3FvUUN3ZS9ZdHVsZnkKR3lxelgxR2JycTZYWmxQU3ZkYzFnOTl3WHZPWjhzK0pvdTdYRk05c0NNdDJaaDRGTVVJQVB4U2s2YU9CbkRDQgptVEFPQmdOVkhROEJBZjhFQkFNQ0JhQXdIUVlEVlIwbEJCWXdGQVlJS3dZQkJRVUhBd0VHQ0NzR0FRVUZCd01DCk1Bd0dBMVVkRXdFQi93UUNNQUF3S3dZRFZSMGpCQ1F3SW9BZ0NzbGN5WERra3MzRGRWTi8vT2RrcUVua3kzbjMKRGJFQVl0SXg4dFpkWFo4d0xRWURWUjBSQkNZd0pJSVliM0prWlhKbGNqRXVaM0p2WldsbVlXSnlhV1ZyTG01cwpnZ2h2Y21SbGNtVnlNVEFLQmdncWhrak9QUVFEQWdOSEFEQkVBaUJkRnJBQThEelZEQkdEUXU4d1pvSEJ3SEFuCkMvK2FRYmlmRlRQRFpTYVh3d0lnV2VCYUhabDdzYzUxNWFDNEtoSkxzaGpsUDQ2bERCcE53V0xwSno3SUpNMD0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=",
+                    "host": "orderer1.groeifabriek.nl",
+                    "port": 7050,
+                    "server_tls_cert": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNhekNDQWhLZ0F3SUJBZ0lRUk5LUzl3U1J5clRqcFhXRk9hdFB6ekFLQmdncWhrak9QUVFEQWpCME1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVlNQllHQTFVRUNoTVBaM0p2WldsbVlXSnlhV1ZyTG01c01SNHdIQVlEVlFRREV4VjBiSE5qCllTNW5jbTlsYVdaaFluSnBaV3N1Ym13d0hoY05NakF3TlRFMU1UZzBOVEF3V2hjTk16QXdOVEV6TVRnME5UQXcKV2pCZE1Rc3dDUVlEVlFRR0V3SlZVekVUTUJFR0ExVUVDQk1LUTJGc2FXWnZjbTVwWVRFV01CUUdBMVVFQnhNTgpVMkZ1SUVaeVlXNWphWE5qYnpFaE1COEdBMVVFQXhNWWIzSmtaWEpsY2pFdVozSnZaV2xtWVdKeWFXVnJMbTVzCk1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRTJyRTdzdDRqeFdDUXFHR3FvUUN3ZS9ZdHVsZnkKR3lxelgxR2JycTZYWmxQU3ZkYzFnOTl3WHZPWjhzK0pvdTdYRk05c0NNdDJaaDRGTVVJQVB4U2s2YU9CbkRDQgptVEFPQmdOVkhROEJBZjhFQkFNQ0JhQXdIUVlEVlIwbEJCWXdGQVlJS3dZQkJRVUhBd0VHQ0NzR0FRVUZCd01DCk1Bd0dBMVVkRXdFQi93UUNNQUF3S3dZRFZSMGpCQ1F3SW9BZ0NzbGN5WERra3MzRGRWTi8vT2RrcUVua3kzbjMKRGJFQVl0SXg4dFpkWFo4d0xRWURWUjBSQkNZd0pJSVliM0prWlhKbGNqRXVaM0p2WldsbVlXSnlhV1ZyTG01cwpnZ2h2Y21SbGNtVnlNVEFLQmdncWhrak9QUVFEQWdOSEFEQkVBaUJkRnJBQThEelZEQkdEUXU4d1pvSEJ3SEFuCkMvK2FRYmlmRlRQRFpTYVh3d0lnV2VCYUhabDdzYzUxNWFDNEtoSkxzaGpsUDQ2bERCcE53V0xwSno3SUpNMD0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
+                  },
+                  {
+                    "client_tls_cert": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNURENDQWZLZ0F3SUJBZ0lRWDJmT2xZUERpeHRJUnBOek5lZUY2VEFLQmdncWhrak9QUVFEQWpCa01Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVFNQTRHQTFVRUNoTUhjR2wyZEM1dWJERVdNQlFHQTFVRUF4TU5kR3h6WTJFdWNHbDJkQzV1CmJEQWVGdzB5TURBMU1UVXhPRFEyTURCYUZ3MHpNREExTVRNeE9EUTJNREJhTUZVeEN6QUpCZ05WQkFZVEFsVlQKTVJNd0VRWURWUVFJRXdwRFlXeHBabTl5Ym1saE1SWXdGQVlEVlFRSEV3MVRZVzRnUm5KaGJtTnBjMk52TVJrdwpGd1lEVlFRREV4QnZjbVJsY21WeU1DNXdhWFowTG01c01Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEClFnQUVPTDRCOXN2ZU9RcGNNZHhwdmRGWm9hZitDem95MU9wOVhkdjlPaHUyaDhvS3ozdHE5TWpmd0JNMHF4SU4KZEFveHBaeDJVMU9wMSs3dVV2UEVvQVNUTDZPQmxEQ0JrVEFPQmdOVkhROEJBZjhFQkFNQ0JhQXdIUVlEVlIwbApCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQndNQ01Bd0dBMVVkRXdFQi93UUNNQUF3S3dZRFZSMGpCQ1F3CklvQWdRbStBRVJ4N0hqYXEvN1JmUnJaVk1JRCtKTGtmbDZvanlybXJIc25vb25Vd0pRWURWUjBSQkI0d0hJSVEKYjNKa1pYSmxjakF1Y0dsMmRDNXViSUlJYjNKa1pYSmxjakF3Q2dZSUtvWkl6ajBFQXdJRFNBQXdSUUloQVBkMwpUZDBGd0Rjako2cHFsV0l4ZnpRc0lySHZRb0p5RnFudW9kR1VPZVlZQWlBREZiUEk3N2hhTmpyRHVUd2FaMVc5Cmx6cGNMbFNEdTNjMnNhVW44dG9ZWkE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                    "host": "orderer0.pivt.nl",
+                    "port": 7050,
+                    "server_tls_cert": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNURENDQWZLZ0F3SUJBZ0lRWDJmT2xZUERpeHRJUnBOek5lZUY2VEFLQmdncWhrak9QUVFEQWpCa01Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVFNQTRHQTFVRUNoTUhjR2wyZEM1dWJERVdNQlFHQTFVRUF4TU5kR3h6WTJFdWNHbDJkQzV1CmJEQWVGdzB5TURBMU1UVXhPRFEyTURCYUZ3MHpNREExTVRNeE9EUTJNREJhTUZVeEN6QUpCZ05WQkFZVEFsVlQKTVJNd0VRWURWUVFJRXdwRFlXeHBabTl5Ym1saE1SWXdGQVlEVlFRSEV3MVRZVzRnUm5KaGJtTnBjMk52TVJrdwpGd1lEVlFRREV4QnZjbVJsY21WeU1DNXdhWFowTG01c01Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEClFnQUVPTDRCOXN2ZU9RcGNNZHhwdmRGWm9hZitDem95MU9wOVhkdjlPaHUyaDhvS3ozdHE5TWpmd0JNMHF4SU4KZEFveHBaeDJVMU9wMSs3dVV2UEVvQVNUTDZPQmxEQ0JrVEFPQmdOVkhROEJBZjhFQkFNQ0JhQXdIUVlEVlIwbApCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQndNQ01Bd0dBMVVkRXdFQi93UUNNQUF3S3dZRFZSMGpCQ1F3CklvQWdRbStBRVJ4N0hqYXEvN1JmUnJaVk1JRCtKTGtmbDZvanlybXJIc25vb25Vd0pRWURWUjBSQkI0d0hJSVEKYjNKa1pYSmxjakF1Y0dsMmRDNXViSUlJYjNKa1pYSmxjakF3Q2dZSUtvWkl6ajBFQXdJRFNBQXdSUUloQVBkMwpUZDBGd0Rjako2cHFsV0l4ZnpRc0lySHZRb0p5RnFudW9kR1VPZVlZQWlBREZiUEk3N2hhTmpyRHVUd2FaMVc5Cmx6cGNMbFNEdTNjMnNhVW44dG9ZWkE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="
+                  },
+                  {
+                    "client_tls_cert": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURXRENDQXYrZ0F3SUJBZ0lDRUFBd0NnWUlLb1pJemowRUF3SXdkREVMTUFrR0ExVUVCaE1DVlZNeEV6QVIKQmdOVkJBZ1RDa05oYkdsbWIzSnVhV0V4RmpBVUJnTlZCQWNURFZOaGJpQkdjbUZ1WTJselkyOHhHREFXQmdOVgpCQW9URDJkeWIyVnBabUZpY21sbGF5NXViREVlTUJ3R0ExVUVBeE1WZEd4elkyRXVaM0p2WldsbVlXSnlhV1ZyCkxtNXNNQjRYRFRJd01EWXdPREF4TURJMU5Gb1hEVEl4TURZeE9EQXhNREkxTkZvd2J6RUxNQWtHQTFVRUJoTUMKVlZNeEV6QVJCZ05WQkFnTUNrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY01EVk5oYmlCR2NtRnVZMmx6WTI4eApFREFPQmdOVkJBc01CMjl5WkdWeVpYSXhJVEFmQmdOVkJBTU1HRzl5WkdWeVpYSXlMbWR5YjJWcFptRmljbWxsCmF5NXViREJaTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEEwSUFCUEx2VFI1dUNQNkFMWTVFRWdtc1pUL3gKaVBBVG80NXkzNnJFQkVnVGRSdk9FS09EbCs2eW11aWxGS3VodysvRjdQaXhJKzByRXFQYlAxQUVXNzVNY2Q2agpnZ0dFTUlJQmdEQU1CZ05WSFJNQkFmOEVBakFBTUIwR0ExVWREZ1FXQkJScHFoOEMyUXdRamFPa1JiMU1qdzhoCjNyNkpCVEFyQmdOVkhTTUVKREFpZ0NBS3lWekpjT1NTemNOMVUzLzg1MlNvU2VUTGVmY05zUUJpMGpIeTFsMWQKbnpBT0JnTlZIUThCQWY4RUJBTUNBNmd3SFFZRFZSMGxCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQndNQwpNSUdTQmdOVkhSRUVnWW93Z1llQ1d5b3ViWGxqYkhWemRHVnlMV1JoYkRFeUxXSmtPR1UxT0Raa05qWmxabVk0Ck1URXhPV0ptWlRRM01qSmlNVE5rWW1RMExUQXdNREF1ZFhNdGMyOTFkR2d1WTI5dWRHRnBibVZ5Y3k1aGNIQmsKYjIxaGFXNHVZMnh2ZFdTQ0NHOXlaR1Z5WlhJeWdoaHZjbVJsY21WeU1pNW5jbTlsYVdaaFluSnBaV3N1Ym15SApCSDhBQUFFd1lBWUlLZ01FQlFZSENBRUVWQXhTZTJGMGRISnpPbnRvWmk1QlptWnBiR2xoZEdsdmJqb3NhR1l1ClJXNXliMnhzYldWdWRFbEVPbTl5WkdWeVpYSXlMbWR5YjJWcFptRmljbWxsYXk1dWJDeG9aaTVVZVhCbE9tOXkKWkdWeVpYSjlmVEFLQmdncWhrak9QUVFEQWdOSEFEQkVBaUFZTjRndXZRdGkzNUJLb3E5d2tyaEdOeEVPK3BhTgoxNWJnWFdQV3dxVVFPUUlnRW9YYWZqU2hnMTdsVldqODJvSjRXV25FdDN4eWIrWmFxeGVaem1IUkZjQT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=",
+                    "host": "ibp-jorge-ordservicemignode1-orderer.mycluster-dal12-bd8e586d66eff81119bfe4722b13dbd4-0000.us-south.containers.appdomain.cloud",
+                    "port": 443,
+                    "server_tls_cert": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURXRENDQXYrZ0F3SUJBZ0lDRUFBd0NnWUlLb1pJemowRUF3SXdkREVMTUFrR0ExVUVCaE1DVlZNeEV6QVIKQmdOVkJBZ1RDa05oYkdsbWIzSnVhV0V4RmpBVUJnTlZCQWNURFZOaGJpQkdjbUZ1WTJselkyOHhHREFXQmdOVgpCQW9URDJkeWIyVnBabUZpY21sbGF5NXViREVlTUJ3R0ExVUVBeE1WZEd4elkyRXVaM0p2WldsbVlXSnlhV1ZyCkxtNXNNQjRYRFRJd01EWXdPREF4TURJMU5Gb1hEVEl4TURZeE9EQXhNREkxTkZvd2J6RUxNQWtHQTFVRUJoTUMKVlZNeEV6QVJCZ05WQkFnTUNrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY01EVk5oYmlCR2NtRnVZMmx6WTI4eApFREFPQmdOVkJBc01CMjl5WkdWeVpYSXhJVEFmQmdOVkJBTU1HRzl5WkdWeVpYSXlMbWR5YjJWcFptRmljbWxsCmF5NXViREJaTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEEwSUFCUEx2VFI1dUNQNkFMWTVFRWdtc1pUL3gKaVBBVG80NXkzNnJFQkVnVGRSdk9FS09EbCs2eW11aWxGS3VodysvRjdQaXhJKzByRXFQYlAxQUVXNzVNY2Q2agpnZ0dFTUlJQmdEQU1CZ05WSFJNQkFmOEVBakFBTUIwR0ExVWREZ1FXQkJScHFoOEMyUXdRamFPa1JiMU1qdzhoCjNyNkpCVEFyQmdOVkhTTUVKREFpZ0NBS3lWekpjT1NTemNOMVUzLzg1MlNvU2VUTGVmY05zUUJpMGpIeTFsMWQKbnpBT0JnTlZIUThCQWY4RUJBTUNBNmd3SFFZRFZSMGxCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQndNQwpNSUdTQmdOVkhSRUVnWW93Z1llQ1d5b3ViWGxqYkhWemRHVnlMV1JoYkRFeUxXSmtPR1UxT0Raa05qWmxabVk0Ck1URXhPV0ptWlRRM01qSmlNVE5rWW1RMExUQXdNREF1ZFhNdGMyOTFkR2d1WTI5dWRHRnBibVZ5Y3k1aGNIQmsKYjIxaGFXNHVZMnh2ZFdTQ0NHOXlaR1Z5WlhJeWdoaHZjbVJsY21WeU1pNW5jbTlsYVdaaFluSnBaV3N1Ym15SApCSDhBQUFFd1lBWUlLZ01FQlFZSENBRUVWQXhTZTJGMGRISnpPbnRvWmk1QlptWnBiR2xoZEdsdmJqb3NhR1l1ClJXNXliMnhzYldWdWRFbEVPbTl5WkdWeVpYSXlMbWR5YjJWcFptRmljbWxsYXk1dWJDeG9aaTVVZVhCbE9tOXkKWkdWeVpYSjlmVEFLQmdncWhrak9QUVFEQWdOSEFEQkVBaUFZTjRndXZRdGkzNUJLb3E5d2tyaEdOeEVPK3BhTgoxNWJnWFdQV3dxVVFPUUlnRW9YYWZqU2hnMTdsVldqODJvSjRXV25FdDN4eWIrWmFxeGVaem1IUkZjQT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
+                  },
+                  {
+                    "client_tls_cert": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURXVENDQXYrZ0F3SUJBZ0lDRUFBd0NnWUlLb1pJemowRUF3SXdkREVMTUFrR0ExVUVCaE1DVlZNeEV6QVIKQmdOVkJBZ1RDa05oYkdsbWIzSnVhV0V4RmpBVUJnTlZCQWNURFZOaGJpQkdjbUZ1WTJselkyOHhHREFXQmdOVgpCQW9URDJkeWIyVnBabUZpY21sbGF5NXViREVlTUJ3R0ExVUVBeE1WZEd4elkyRXVaM0p2WldsbVlXSnlhV1ZyCkxtNXNNQjRYRFRJd01EWXhOekUyTkRVd05Gb1hEVEl4TURZeU56RTJORFV3TkZvd2J6RUxNQWtHQTFVRUJoTUMKVlZNeEV6QVJCZ05WQkFnTUNrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY01EVk5oYmlCR2NtRnVZMmx6WTI4eApFREFPQmdOVkJBc01CMjl5WkdWeVpYSXhJVEFmQmdOVkJBTU1HRzl5WkdWeVpYSXlMbWR5YjJWcFptRmljbWxsCmF5NXViREJaTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEEwSUFCS2o3ZGNIZEg5dW9sMGp2M0VlbDZyeTgKenVjc3I5ak0yVUNuaEZ3QktPcElJaExPUGJheVZRR3hRYW5pNzB3T3FMK2tObXhTVEx6eGlYSjhKdmswbENxagpnZ0dFTUlJQmdEQU1CZ05WSFJNQkFmOEVBakFBTUIwR0ExVWREZ1FXQkJSbmhwUjJhS3NTQUFFUFZpakZDT3dlClJpaXFMakFyQmdOVkhTTUVKREFpZ0NBS3lWekpjT1NTemNOMVUzLzg1MlNvU2VUTGVmY05zUUJpMGpIeTFsMWQKbnpBT0JnTlZIUThCQWY4RUJBTUNBNmd3SFFZRFZSMGxCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQndNQwpNSUdTQmdOVkhSRUVnWW93Z1llQ1d5b3ViWGxqYkhWemRHVnlMV1JoYkRFeUxXSmtPR1UxT0Raa05qWmxabVk0Ck1URXhPV0ptWlRRM01qSmlNVE5rWW1RMExUQXdNREF1ZFhNdGMyOTFkR2d1WTI5dWRHRnBibVZ5Y3k1aGNIQmsKYjIxaGFXNHVZMnh2ZFdTQ0NHOXlaR1Z5WlhJeWdoaHZjbVJsY21WeU1pNW5jbTlsYVdaaFluSnBaV3N1Ym15SApCSDhBQUFFd1lBWUlLZ01FQlFZSENBRUVWQXhTZTJGMGRISnpPbnRvWmk1QlptWnBiR2xoZEdsdmJqb3NhR1l1ClJXNXliMnhzYldWdWRFbEVPbTl5WkdWeVpYSXlMbWR5YjJWcFptRmljbWxsYXk1dWJDeG9aaTVVZVhCbE9tOXkKWkdWeVpYSjlmVEFLQmdncWhrak9QUVFEQWdOSUFEQkZBaUVBd2V4UmtrSTVKRmgzZXRqNS9Pb3doR0lCeWxldApKZW1QWU5USjNEYjFzaElDSUVaQ1V3ZllUVG4ycXFXN0xzOFo2R1NTQnZic1MyOFMwT0lORkdqTDVsRVkKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=",
+                    "host": "ibp-jorge-ordservicemig2node1-orderer.mycluster-dal12-bd8e586d66eff81119bfe4722b13dbd4-0000.us-south.containers.appdomain.cloud",
+                    "port": 443,
+                    "server_tls_cert": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURXVENDQXYrZ0F3SUJBZ0lDRUFBd0NnWUlLb1pJemowRUF3SXdkREVMTUFrR0ExVUVCaE1DVlZNeEV6QVIKQmdOVkJBZ1RDa05oYkdsbWIzSnVhV0V4RmpBVUJnTlZCQWNURFZOaGJpQkdjbUZ1WTJselkyOHhHREFXQmdOVgpCQW9URDJkeWIyVnBabUZpY21sbGF5NXViREVlTUJ3R0ExVUVBeE1WZEd4elkyRXVaM0p2WldsbVlXSnlhV1ZyCkxtNXNNQjRYRFRJd01EWXhOekUyTkRVd05Gb1hEVEl4TURZeU56RTJORFV3TkZvd2J6RUxNQWtHQTFVRUJoTUMKVlZNeEV6QVJCZ05WQkFnTUNrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY01EVk5oYmlCR2NtRnVZMmx6WTI4eApFREFPQmdOVkJBc01CMjl5WkdWeVpYSXhJVEFmQmdOVkJBTU1HRzl5WkdWeVpYSXlMbWR5YjJWcFptRmljbWxsCmF5NXViREJaTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEEwSUFCS2o3ZGNIZEg5dW9sMGp2M0VlbDZyeTgKenVjc3I5ak0yVUNuaEZ3QktPcElJaExPUGJheVZRR3hRYW5pNzB3T3FMK2tObXhTVEx6eGlYSjhKdmswbENxagpnZ0dFTUlJQmdEQU1CZ05WSFJNQkFmOEVBakFBTUIwR0ExVWREZ1FXQkJSbmhwUjJhS3NTQUFFUFZpakZDT3dlClJpaXFMakFyQmdOVkhTTUVKREFpZ0NBS3lWekpjT1NTemNOMVUzLzg1MlNvU2VUTGVmY05zUUJpMGpIeTFsMWQKbnpBT0JnTlZIUThCQWY4RUJBTUNBNmd3SFFZRFZSMGxCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQndNQwpNSUdTQmdOVkhSRUVnWW93Z1llQ1d5b3ViWGxqYkhWemRHVnlMV1JoYkRFeUxXSmtPR1UxT0Raa05qWmxabVk0Ck1URXhPV0ptWlRRM01qSmlNVE5rWW1RMExUQXdNREF1ZFhNdGMyOTFkR2d1WTI5dWRHRnBibVZ5Y3k1aGNIQmsKYjIxaGFXNHVZMnh2ZFdTQ0NHOXlaR1Z5WlhJeWdoaHZjbVJsY21WeU1pNW5jbTlsYVdaaFluSnBaV3N1Ym15SApCSDhBQUFFd1lBWUlLZ01FQlFZSENBRUVWQXhTZTJGMGRISnpPbnRvWmk1QlptWnBiR2xoZEdsdmJqb3NhR1l1ClJXNXliMnhzYldWdWRFbEVPbTl5WkdWeVpYSXlMbWR5YjJWcFptRmljbWxsYXk1dWJDeG9aaTVVZVhCbE9tOXkKWkdWeVpYSjlmVEFLQmdncWhrak9QUVFEQWdOSUFEQkZBaUVBd2V4UmtrSTVKRmgzZXRqNS9Pb3doR0lCeWxldApKZW1QWU5USjNEYjFzaElDSUVaQ1V3ZllUVG4ycXFXN0xzOFo2R1NTQnZic1MyOFMwT0lORkdqTDVsRVkKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
+                  }
+                ],
+                "options": {
+                  "election_tick": 10,
+                  "heartbeat_tick": 1,
+                  "max_inflight_blocks": 5,
+                  "snapshot_interval_size": 20971520,
+                  "tick_interval": "500ms"
+                }
+              },
+              "state": "STATE_NORMAL",
+              "type": "etcdraft"
+            },
+            "version": "1"
+          }
+        },
+        "version": "0"
+      }
+    },
+    "mod_policy": "Admins",
+    "policies": {
+      "Admins": {
+        "mod_policy": "Admins",
+        "policy": {
+          "type": 3,
+          "value": {
+            "rule": "MAJORITY",
+            "sub_policy": "Admins"
+          }
+        },
+        "version": "0"
+      },
+      "Readers": {
+        "mod_policy": "Admins",
+        "policy": {
+          "type": 3,
+          "value": {
+            "rule": "ANY",
+            "sub_policy": "Readers"
+          }
+        },
+        "version": "0"
+      },
+      "Writers": {
+        "mod_policy": "Admins",
+        "policy": {
+          "type": 3,
+          "value": {
+            "rule": "ANY",
+            "sub_policy": "Writers"
+          }
+        },
+        "version": "0"
+      }
+    },
+    "values": {
+      "BlockDataHashingStructure": {
+        "mod_policy": "Admins",
+        "value": {
+          "width": 4294967295
+        },
+        "version": "0"
+      },
+      "Capabilities": {
+        "mod_policy": "Admins",
+        "value": {
+          "capabilities": {
+            "V1_4_3": {}
+          }
+        },
+        "version": "0"
+      },
+      "Consortium": {
+        "mod_policy": "Admins",
+        "value": {
+          "name": "TheConsortium"
+        },
+        "version": "0"
+      },
+      "HashingAlgorithm": {
+        "mod_policy": "Admins",
+        "value": {
+          "name": "SHA256"
+        },
+        "version": "0"
+      },
+      "OrdererAddresses": {
+        "mod_policy": "/Channel/Orderer/Admins",
+        "value": {
+          "addresses": [
+            "orderer0.groeifabriek.nl:7050",
+            "orderer1.groeifabriek.nl:7050",
+            "orderer0.pivt.nl:7050",
+            "ibp-jorge-ordservicemignode1-orderer.mycluster-dal12-bd8e586d66eff81119bfe4722b13dbd4-0000.us-south.containers.appdomain.cloud:443",
+            "ibp-jorge-ordservicemig2node1-orderer.mycluster-dal12-bd8e586d66eff81119bfe4722b13dbd4-0000.us-south.containers.appdomain.cloud:443"
+          ]
+        },
+        "version": "1"
+      }
+    },
+    "version": "0"
+  },
+  "sequence": "6"
+}

@@ -1,0 +1,7 @@
+{
+    "CHANNEL_NAME": "common",
+    "ORDERER_CONTAINER": "orderer0.groeifabriek.nl:7050",
+    "ADMIN_TLSCA_CERT": "../../crypto-config/GroeifabriekMSP-Admin/msp/tlscacerts/tlsca.groeifabriek.nl-cert.pem",
+    "FABRIC_PATH":      "../../crypto-config/GroeifabriekMSP-Admin",
+    "FABRIC_PATH_SIGN": "../../crypto-config/PivtMSP-Admin"
+}
