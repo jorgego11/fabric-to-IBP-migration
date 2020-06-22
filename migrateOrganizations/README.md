@@ -269,9 +269,8 @@ The following image describes the current state of the network migration process
 ## Remove Source Network Peers
 
 We have to remove the source network anchor peers from the application channel configuration. This is a channel configuration update transaction on the application channel. 
-We also have to make sure that the source network peer identities are not used to submit any future transaction on the application channel. In other words, we have to add the peer identities to the certificate revocation list of the application channel. This is a channel configuration update transaction on the application channel. 
+We also have to make sure that the source network peer identities are not used to submit any future transaction on the application channel. In other words, we have to add the peer identities to the certificate revocation list of the application channel. This is also a channel configuration update transaction on the application channel. 
 
-<TBD>
 
 
 The following image describes the current state of the network migration process: we have removed both peers in the source network from the application channel.
