@@ -16,13 +16,13 @@ There is a separate folder with a Readme file and scripts for each step of the m
 ## Known Limitations
 
 * At this time, there is no explicit support for Private Data Collections
-* The current use assumes that the source Fabric Network uses an external CA. A similar process can be used for networks that use FabricCA. 
+* The current scenario assumes that the source Fabric Network uses an external CA. A similar process can be used for fabric networks that use FabricCA. 
 * There could be potential problems for new peers in IBP per https://jira.hyperledger.org/browse/FAB-5288 (need to check how the Enterprise->v2 Migration Tool avoid this)
 
 ## IBP Problems Found
 
-* IBP v2 Orderer Node creation API does not work.  I had to use v1 which is undocumented
-* The IBP Peer Node creation API has some parameters that don’t work for the 4/16 fix release
-* IBP does not support custom consortium names in system channel configuration block. It only works the name SampleConsortium. A pending fix has been created for this. 
+* IBP v2 Orderer Node creation API does not work.  I had to use v1 which is undocumented. A pending IBP fix has been created for this.
+* The IBP Peer Node creation API has some parameters that don’t work for the 4/16 fix release. IBP releases beyond 4/16 fix this problem.
+* IBP does not support custom consortium names in system channel configuration block. It only works the standard name SampleConsortium. A pending IBP fix has been created for this. 
 
 
