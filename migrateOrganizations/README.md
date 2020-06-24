@@ -217,7 +217,9 @@ Reuse the same createPeer-IBP.json file and run this script to create the Peer P
 
 ### Confirm Peer Network Connectivity
 
-The new Peer Pod just created must be able to connect to the other orderer nodes in the source network. One way to do this is by defining hostAliases in the deployment yaml file of the new Peer Pod. This is a sample hostAliases definition that applies to this example:
+The new Peer Pod just created must be able to connect to the other orderer nodes in the source network. One way to do this is by defining hostAliases in the deployment yaml file of the new Peer Pod. Note that although this is possible in IBP v2.1.3, future IBP versions may disallow this practice.
+
+This is a sample hostAliases definition that applies to this example:
 
 ```
   hostAliases:
@@ -250,6 +252,8 @@ The following image describes the current state of the network migration process
 ## Remove Source Network Consenters
 
 Now that we have all the the business organization' consenters replicated in IBP, we can remove them from the source network. As we have mentioned before, the removal of consenters must be done one-by-one in order to maintain (Raft) quorum. Always, first remove the consenter from every application channel that the consenter is participating before removing it from the system channel.
+
+In a real production migration scenario, you may want to wait until ALL business organizations have been successfully migrated before you start removing consenters and peers from the source network. 
 
 
 ### Remove Consenter from Application Channel
