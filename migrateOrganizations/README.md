@@ -4,7 +4,7 @@
 
 The term Organization is used here from a generic business point of view. An Organization will have a Peer Org MSP, a Peer Org MSP Admin identity and one or more peers and potentially can also have an Orderer Org MSP plus an Orderer Org MSP Admin identity that will provide one or more consenter nodes to a network wide Raft based Orderer. 
 
-For each Organization or node in the network, we will extend the Orderer and Peer MSPs and create new orderer and peers kubernetes pods on the target network. A key concept here is that within the context of a network migration, we don't need to create new Org MSPs but we will reuse the existing ones. The migration process described in this section must be repeated for each business Organization in the network.
+For each Organization or node in the network, we will extend the Orderer and Peer MSPs and create new orderer and peers kubernetes pods on the target network. A key concept here is that within the context of a network migration, we don't need to create new Org MSPs but we will reuse the existing ones. The migration process described in this section must be repeated for each business Organization in the network. Also, note that we will not remove the already migrated consenters and peers until the very end. This is to allow to roll back and return to the original source network in case of major problems. 
 
 ## Prerequisites 
 
@@ -87,7 +87,9 @@ Reuse the same createOrderer-IBP.json and run this script to complete the `first
 
 ### Confirm Orderer Network Connectivity
 
-The new orderer node just created must be able to connect to the other orderer nodes in the source network. One way to do this is by defining hostAliases in the deployment yaml file of the new orderer node. This is a sample hostAliases definition:
+The new orderer node just created must be able to connect to the other orderer nodes in the source network. One way to do this is by defining hostAliases in the deployment yaml file of the new orderer node. Note that although this is possible in IBP v2.1.3, future IBP versions may disallow this practice.
+
+This is a sample hostAliases definition:
 
 ```
   hostAliases:
