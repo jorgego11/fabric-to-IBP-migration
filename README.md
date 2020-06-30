@@ -19,7 +19,7 @@ The process of adding or removing consenters and peers and migrating from Kafka 
 
 ### Channel Config Updates based on fabric-config library
 
-There is a separate [repo](https://github.ibm.com/BlockchainLabs/fabric-config-updater) that contains different GO utilities that leverage the[fabric-config](https://github.com/hyperledger/fabric-config) library for most channel config updates. These are some of the updates that are currently supported (more comming soon):
+There is a separate [repo](https://github.ibm.com/BlockchainLabs/fabric-config-updater) that contains different GO utilities that leverage the [fabric-config](https://github.com/hyperledger/fabric-config) library for most channel config updates. These are some of the updates that are currently supported (more comming soon):
 
 * `encodeBlock` - Encodes a configuration block into a base64 string
 * `addConsenter` - Adds a new orderer node as a consenter to the channel

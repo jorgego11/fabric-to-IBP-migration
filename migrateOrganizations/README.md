@@ -108,50 +108,8 @@ This is a sample hostAliases definition:
 
 ### Add Consenter to the System Channel
 
-Now we are between the first and the second steps, we will run the scripts to get the system channel configuration, manually update the system channel json file and finally run the script to apply the configuration update. 
-
----
-
-`As an alternative to running the scripts and manually update the system channel json file, there is a GO program that leverages the fabric-config library for most channel updates. This repo is located here:`
-
-https://github.ibm.com/BlockchainLabs/fabric-config-updater
-
----
-
-Change the directory to the folder `channelConfigUpdate` and complete the configuration file `channelBlock.json`. 
-
-```
-cd channelConfigUpdate
-```
-
-channelBlock.json explained
-```
-{
-    "CHANNEL_NAME": "This is the channel id, typically for system channel will be testchainid, otherwise is the name of the application channel we want to update",
-    "ORDERER_CONTAINER": "This is the orderer node URL in the source network that will receive the channle update commands",
-    "ADMIN_TLSCA_CERT": "path to the pem TLS certificate for the organization admin",
-    "FABRIC_PATH":      "path to the msp folder structure for the Orderer Org Admin that will submit channel update transactions ( ../../crypto-config/GroeifabriekMSP-Admin) ",
-    "FABRIC_PATH_SIGN": "path to the msp folder structure for another Orderer Org Admin that will sign transactions based on the channel update policy ( ../../crypto-config/PivtMSP-Admin)"
-}
-```
-
-
-Make sure you have updated `channelBlock.json`. The following script will get the channel config json file in a way that is ready for manual updates.
-
-```
-./channelBlockGet.sh channelBlock.json
-```
-
-Now update the file `03config_blockTrimUPDATED.json` as needed. Typical updates are adding or removing a consenter node to the system or application channels. In this particular example, since we are adding a new consenter in IBP we will add the new consenter TLS and API information to this json file. 
-
-Note that you need to add or remove consenter nodes `one by one` as we always need to have (Raft) quorum to accept the update. 
-
-The following script will apply the updated configuration to the channel.
-
-```
-./channelBlockUpdate.sh channelBlock.json
-```
-
+Now we are between the first and the second steps, update the channel configuration as described in the main README. 
+In this particular example, since we are adding a new consenter in IBP we will need to provide the new consenter TLS and URL information. Note that you need to add or remove consenter nodes `one by one` as we always need to have (Raft) quorum to accept the update. 
 
 
 ### Submit config block to orderer (Second Step)
