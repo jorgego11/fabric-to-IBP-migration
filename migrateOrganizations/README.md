@@ -129,12 +129,7 @@ Login to the IBP console and verify that the just added orderer node shows the g
 
 ### Add Consenter to the Application Channel
 
-At this time we have the new consenter node added to the system channel. The process to add the same consenter to the application channel is very similar to the previous section `Update System Channel Configuration`. Make sure to update the channelBlock.json file to reference to the application channel. For our `source network` the application channel is called `common`. Note that in a real migration scenario there may be multiple application channels that the consenter must be added.
-
-* Review and update channelBlock.json 
-* ./channelBlockGet.sh  channelBlock.json
-* manually update the file  `03config_blockTrimUPDATED.json`
-* ./channelBlockUpdate.sh  channelBlock.json
+At this time we have the new consenter node added to the system channel. The process to add the same consenter to the application channel is very similar to the previous section `Add Consenter to the System Channel`. Make sure you reference the application channel this time. In our `source network` the application channel is called `common`. Note that in a real migration scenario there may be multiple application channels that the consenter must be added.
 
 
 ### Migrate Second Consenter Node
