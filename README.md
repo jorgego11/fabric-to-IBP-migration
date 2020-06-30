@@ -30,7 +30,7 @@ There is a separate [repo](https://github.ibm.com/BlockchainLabs/fabric-config-u
 
 ### Channel Config Updates based on Fabric CLI commands
 
-Note that this option requires knowledge of the JSON structure that represents a channel configuration. This channel config update process consists basically of 3 steps: run a script to get the config block in JSON format, manually update channel config JSON file and run a script to submit the config update. The details of this process are described below: 
+This option leverages the `peer` and `configtxlator` CLI commands. Note that it requires knowledge of the JSON structure that represents a channel configuration. The channel config update process consists basically of 3 steps: run a script to get the config block in JSON format, manually update channel config JSON file and run a script to submit the config update. The details of this process are described below: 
 
 Change the directory to the folder `channelConfigUpdate` and complete the configuration file `channelBlock.json`. 
 
