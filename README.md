@@ -19,7 +19,7 @@ The process of adding or removing consenters and peers and migrating from Kafka 
 
 ### Channel Config Updates based on fabric-config library
 
-There is a separate [repo](https://github.ibm.com/BlockchainLabs/fabric-config-updater) that contains different GO utilities that leverage [fabric-config](https://github.com/hyperledger/fabric-config) library for all channel config updates. These are some of the updates that are currently supported (more comming soon):
+There is a separate [repo](https://github.ibm.com/BlockchainLabs/fabric-config-updater) that contains different GO utilities that leverage the[fabric-config](https://github.com/hyperledger/fabric-config) library for most channel config updates. These are some of the updates that are currently supported (more comming soon):
 
 * `encodeBlock` - Encodes a configuration block into a base64 string
 * `addConsenter` - Adds a new orderer node as a consenter to the channel
@@ -30,7 +30,7 @@ There is a separate [repo](https://github.ibm.com/BlockchainLabs/fabric-config-u
 
 ### Channel Config Updates based on Fabric CLI commands
 
-Note that this option requires knowledge of the JSON structure that represents a channel configuration. The channel config update process consists basically of 3 steps: run a script to get the config block in JSON format, manually update channel config JSON file and run a script to submit the config update. 
+Note that this option requires knowledge of the JSON structure that represents a channel configuration. This channel config update process consists basically of 3 steps: run a script to get the config block in JSON format, manually update channel config JSON file and run a script to submit the config update. The details of this process are described below: 
 
 Change the directory to the folder `channelConfigUpdate` and complete the configuration file `channelBlock.json`. 
 
@@ -61,7 +61,7 @@ The following script will apply the updated configuration to the channel.
 
 
 
-## Known Limitations
+## Asset Known Limitations
 
 * At this time, there is no explicit support for Private Data Collections
 * The current scenario assumes that the source Fabric Network uses an external CA. A similar process can be used for fabric networks that use FabricCA. 
