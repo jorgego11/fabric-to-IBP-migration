@@ -8,7 +8,7 @@ There is an expectation that as the IBM Blockchain Platform (IBP) matures there 
 
 There is a separate folder with a Readme file and scripts for each step of the migration process. Note that not all steps are required. For example, some Fabric networks may be using a Raft based Orderer already. The migration steps are:
 
-1. Upgrade the HL Fabric version (coming soon)
+1. [Upgrade HL Fabric version](upgradeFabric/README.md)
 2. [Upgrade Orderer from Kafka to Raft](upgradeOrderer/README.md)
 3. [Migrate Orderer and Organization nodes](migrateOrganizations/README.md)
 
