@@ -239,7 +239,11 @@ We also have to make sure that the source network peer identities are not used t
 
 
 
-The following image describes the current state of the network migration process: we have removed both peers in the source network from the application channel.
 
+## Organization Migrated !! 
+
+The following image describes the final state of the organization migration process.
 
 ![sourceNetwork](img/ibpWithPeersGone.png)
+
+
