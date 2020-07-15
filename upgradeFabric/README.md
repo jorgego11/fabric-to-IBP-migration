@@ -14,7 +14,7 @@ https://hyperledger-fabric.readthedocs.io/en/release-2.1/upgrade.html
 * Upgrade the binaries for the ordering service, the Fabric CA, and the peers. These upgrades may be done in parallel.
 * Upgrade client SDKs.
 * Restart the network and test. 
-* If upgrading to v1.4.2, enable the v1.4.2 channel capabilities. This will be accomplished through a series of configuration update transactions on each channel in the network.
+* If upgrading to v1.4.2, enable the v1.4.2 ``channel capabilities``. This will be accomplished through a series of configuration update transactions on each channel in the network.
 
 
 
