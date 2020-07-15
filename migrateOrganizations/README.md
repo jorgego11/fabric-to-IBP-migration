@@ -60,7 +60,7 @@ You will also have to provide crypto material in two more places:
 
 ## Orderer Consenter Migration
 
-### Create IBP config files
+### Create IBP APIs config files
 
 The script createConfigOrderer.sh creates three .json files under the IBPconfig folder:  the Orderer Node config, the Orderer Org. MSP config and the Orderer Org. Admin identity for the IBP wallet. The script requires a configuration file ordererMigrationConfig.json that has the crypto material plus other parameters.  Complete the ordererMigrationConfig.json file and run this script: 
 
@@ -151,7 +151,7 @@ The following image describes the current state of the network migration process
 ## Peer Node Migration
 
 
-### Create IBP config files
+### Create IBP APIs config files
 
 The script createConfigPeer.sh creates three .json files under the IBPconfig folder:  the Peer Node config, the Peer Org. MSP config and the Peer Org. Admin identity for the IBP wallet. The script requires a configuration file peerMigrationConfig.json that has the crypto material plus other parameters.  Complete the peerMigrationConfig.json file and run this script: 
 
