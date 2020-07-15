@@ -40,7 +40,7 @@ Source Network MSP Org List:
 * NevergreenMSP   (Peer Org)
 
 
-## Procure Crypto Material
+## Procure Crypto Material from Source Network
 
 Under the `crypto-config` folder, provide the crypto material for:
 
