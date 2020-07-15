@@ -4,7 +4,7 @@
 
 The term Organization is used here from a generic business point of view. An Organization will have a Peer Org MSP, a Peer Org MSP Admin identity and one or more peers and potentially can also have an Orderer Org MSP plus an Orderer Org MSP Admin identity that will provide one or more consenter nodes to a network wide Raft based Orderer. 
 
-For each Organization or node in the network, we will extend the Orderer and Peer MSPs and create new orderer and peers kubernetes pods on the target network. A key concept here is that within the context of a network migration, we don't need to create new Org MSPs but we will reuse the existing ones. The migration process described in this section must be repeated for each business Organization in the network. Also, note that we will not remove the already migrated consenters and peers until the very end. This is to allow to roll back and return to the original source network in case of major problems. 
+For each Organization or node in the network, we will extend the Orderer and Peer MSPs and create new orderer and peers kubernetes pods on the target network. ``A key concept here is that within the context of a network migration, we don't need to create new Org MSPs but we will reuse the existing ones.`` The migration process described in this section must be repeated for **each business Organization in the network**. Also, note that we will not remove the already migrated consenters and peers until the very end. This is to allow to roll back and return to the original source network in case of major problems. 
 
 ## Prerequisites 
 
@@ -13,6 +13,13 @@ The prerequisites are:
 2. Every Orderer node in the source network must be network accessible from the target network. 
 3. There is a Kubernetes or OpenShift cluster for the target network with IBP already installed.
 4. Fabric CLI commands are installed for the Fabric version we want to migrate. 
+
+## The Big Picture
+
+The next diagram show a high level view of the migration process: we have the migration scripts in the middle that will talk to the source network on the left using Fabric CLI commands and to the IBP network on the right using IBP APIs. 
+
+![bigPicture](img/bigPicture.png) 
+
 
 ## The Source Network
 
