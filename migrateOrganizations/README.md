@@ -80,11 +80,11 @@ Complete the parameters required in createOrderer-IBP.json and run this script t
 
 Creating the orderer node is a two step process:
 
-In the `first step`, the orderer will be "pre-created" and start without a genesis block. It is effectively dead until it is configured. This is the first step to append a node to a raft cluster. 
+In the **first step**, the orderer will be "pre-created" and start without a genesis block. It is effectively dead until it is configured. This is the first step to append a node to a raft cluster. 
 
-Between the first and the second steps, we will add this node as a consenter to the system-channel by using scripts that leverage Fabric-APIs. There is also an alternative way to update the system channel which is described below.
+Between the first and the second steps, we will add this node as a consenter to the system-channel by running a channel config update transaction. 
 
-In the `second step`, we will bootstrap this node by sending the updated system-channel config-block leveraging the IBP AP called "Submit config block to orderer". Note that the node will not be usable until all these steps are completed. Finally, we will add this new consenter node to application channels as needed. 
+In the **second step**, we will bootstrap this node by sending the updated system-channel config-block leveraging the IBP AP called "Submit config block to orderer". Note that the node will not be usable until all these steps are completed. Finally, we will add this new consenter node to application channels as needed. 
 
 Reuse the same createOrderer-IBP.json and run this script to complete the `first step`.
 
