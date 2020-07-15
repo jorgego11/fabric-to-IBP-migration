@@ -60,7 +60,7 @@ You will also have to provide crypto material in two more places:
 
 ## Orderer Consenter Migration
 
-### Create IBP APIs config files
+### Create IBP APIs Config Files
 
 The script createConfigOrderer.sh creates three .json files under the IBPconfig folder:  the Orderer Node config, the Orderer Org. MSP config and the Orderer Org. Admin identity for the IBP wallet. The script requires a configuration file ordererMigrationConfig.json that has the crypto material plus other parameters.  Complete the ordererMigrationConfig.json file and run this script: 
 
@@ -119,7 +119,7 @@ Now we are between the first and the second steps, update the channel configurat
 In this particular example, since we are adding a new consenter in IBP we will need to provide the new consenter TLS and URL information. Note that you need to add or remove consenter nodes `one by one` as we always need to have (Raft) quorum to accept the update. 
 
 
-### Submit config block to orderer (Second Step)
+### Submit Config Block to Orderer Node (Second Step)
 
 
 Now we are ready for the `second step`. We will send a config block (or genesis block) to the pre-created raft orderer node. The script will use IBP APIs to finish the Raft-append flow and finalize the pre-created orderer. This is the final step to append a node to our Raft cluster. The orderer node will restart, load this block, and connect to the other orderers listed in said block.
@@ -151,7 +151,7 @@ The following image describes the current state of the network migration process
 ## Peer Node Migration
 
 
-### Create IBP APIs config files
+### Create IBP APIs Config Files
 
 The script createConfigPeer.sh creates three .json files under the IBPconfig folder:  the Peer Node config, the Peer Org. MSP config and the Peer Org. Admin identity for the IBP wallet. The script requires a configuration file peerMigrationConfig.json that has the crypto material plus other parameters.  Complete the peerMigrationConfig.json file and run this script: 
 
@@ -234,8 +234,8 @@ The following image describes the current state of the network migration process
 
 ## Remove Source Network Peers
 
-We have to remove the source network anchor peers from the application channel configuration. This is a channel configuration update transaction on the application channel. 
-We also have to make sure that the source network peer identities are not used to submit any future transaction on the application channel. In other words, we have to add the peer identities to the certificate revocation list of the application channel. This is also a channel configuration update transaction on the application channel. 
+We have to **remove the source network anchor peers** from the application channel configuration. This is a channel configuration update transaction on the application channel. 
+We also have to make sure that the source network peer identities are not used to submit any future transaction on the application channel. In other words, we have to **add the peer identities to the certificate revocation list** of the application channel. This is also a channel configuration update transaction on the application channel. 
 
 
 
