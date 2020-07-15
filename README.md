@@ -19,7 +19,7 @@ The process of adding or removing consenters and peers and migrating from Kafka 
 
 ### Channel Config Updates based on fabric-config library
 
-There is a separate [repo](https://github.ibm.com/BlockchainLabs/fabric-config-updater) that contains different GO utilities that leverage the [fabric-config](https://github.com/hyperledger/fabric-config) library for most channel config updates. These are some of the updates that are currently supported (more coming soon):
+There is a separate [fabric-config-updater repo](https://github.ibm.com/BlockchainLabs/fabric-config-updater) that contains different GO utilities that leverage the [fabric-config](https://github.com/hyperledger/fabric-config) library for most channel config updates. These are some of the updates that are currently supported (more coming soon):
 
 * `encodeBlock` - Encodes a configuration block into a base64 string
 * `addConsenter` - Adds a new orderer node as a consenter to the channel
@@ -65,9 +65,9 @@ The following script will apply the updated configuration to the channel.
 
 * At this time, there is no explicit support for Private Data Collections
 * The current scenario assumes that the source Fabric Network uses an external CA. A similar process can be used for fabric networks that use FabricCA. 
-* There could be potential problems for new peers in IBP per https://jira.hyperledger.org/browse/FAB-5288 (need to check how the Enterprise->v2 Migration Tool avoid this)
+* There could be potential problems for new peers in IBP per https://jira.hyperledger.org/browse/FAB-5288 (potential problems with channel reconfiguration, that all stem from the fact that when a peer joins the channel - it is given the first configuration block, the genesis block)
 
-## IBP Problems Found
+## IBP Challenges Found
 
 * IBP v2 Orderer Node creation API does not work.  I had to use v1 which is undocumented. A pending IBP fix has been created for this.
 * The IBP Peer Node creation API has some parameters that don’t work for the 4/16 fix release. IBP releases beyond 4/16 fix this problem.
