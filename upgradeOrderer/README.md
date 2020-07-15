@@ -1,8 +1,8 @@
-# Upgrade Orderer
+# Upgrade Orderer from Kafka to Raft
 
 ## Assumptions and Considerations
 
-The assumption is that we have a HL Fabric network with a Kafka Orderer. We will transition every channel from using Kafka-based ordering services to Raft-based ordering services. This will be accomplished through a series of configuration update transactions on each channel in the network. Note that migration is done in place, utilizing the existing ledgers for the existing deployed Kafka ordering nodes. In other words, the existing orderer nodes will become Raft consenters after the migration. Addition or removal of orderers should be performed after the migration.
+The assumption is that we have a HL Fabric network with a Kafka Orderer. We will transition every channel from using Kafka-based ordering services to Raft-based ordering services. This will be accomplished through a series of configuration update transactions on each channel in the network. **Note that migration is done in place, utilizing the existing ledgers for the existing deployed Kafka ordering nodes. In other words, the existing orderer nodes will become Raft consenters after the migration.** Addition or removal of orderers should be performed after the migration.
 
 At a high level, the process follows the official Fabric documentation described here 
 https://hyperledger-fabric.readthedocs.io/en/release-2.1/upgrade.html
@@ -10,7 +10,7 @@ https://hyperledger-fabric.readthedocs.io/en/release-2.1/upgrade.html
 
 
 
-## Entry to Maintenance Mode
+## Put Channels into Maintenance Mode
 
 Prior to setting the ordering service into maintenance mode, it is recommended that the peers and clients of the network be stopped.
 Stop the peers and client apps. Depending on your Kubernetes deployment, you could try: 
@@ -18,7 +18,7 @@ Stop the peers and client apps. Depending on your Kubernetes deployment, you cou
 kubectl scale deployment <peer-deployment-name> --replicas=0  -n <namespace>
 kubectl scale statefulset <peer-stateful-set-name> --replicas=0  -n <namespace>
 ```
-Update the script ``channelMaintenanceMode.sh`` with the right parameters for your environment and run it for each channel in the network, starting with the **system channel**.
+Update the script ``channelMaintenanceMode.sh`` with the right parameters for your environment and run it for each channel in the network, starting with the **System Channel**.
 
 
 ##  Shut Down nodes, Backup, Restart
@@ -30,11 +30,11 @@ Then restart Zookeeper server, Kafka service and then the ordering service nodes
 
 ## Switch to Raft
 
-The next step in the migration process is another channel configuration update for each channel. 
+Now we have another channel configuration update for each channel. 
 
 Update the script ``channelRaftSwitch.sh`` with the right parameters for your environment and run it for each channel in the network, starting with the **system channel**.
 
-Note: make sure you have all the environment variables requires by Raft Orderer Pods/Containers as defined in the Fabric documentation. Since Raft-based ordering service requires mutual TLS between orderer nodes, additional configurations are required before you start them again. In particular, make sure you followed the recommendations in this section https://hyperledger-fabric.readthedocs.io/en/release-1.4/raft_configuration.html#local-configuration
+``Note: make sure you have all the environment variables required by Raft Orderer Pods/Containers as defined in the Fabric documentation. Since Raft-based ordering service requires mutual TLS between orderer nodes, additional configurations are required before you start them again. In particular, make sure you followed the recommendations in this section https://hyperledger-fabric.readthedocs.io/en/release-1.4/raft_configuration.html#local-configuration``
 
 ## Restart and Validate Leader
 
@@ -55,4 +55,4 @@ Orderer Pods configuration may need to be changed to reflect the TLS configurati
 
 Most probably the production network is running on Docker Compose or a Kubernetes cluster. Depending on the actual networking configuration, significant changes may be needed to allow consenters to connect with each other and peers to connect to each individual consenter.
 
-In summary, the migration process is simple enough by using the tools provided in this repo. The real complexity comes from these other areas mentioned here: TLS conversion, new identities creation, manual updates to the pod/container definition and Docker Compose/Kubernetes networking reconfiguration. Hence, you may want to execute this work on a staging environment first with an end to end planning for the different tasks, before attempting in production. 
+In summary, the migration process is simple enough by using the tools provided in this repo. The real complexity comes from these other areas mentioned here: ``TLS conversion, new identities creation, manual updates to the pod/container definition and Docker Compose/Kubernetes networking reconfiguration``. Hence, you may want to execute this work on a **staging environment** first with an end to end planning for the different tasks, before attempting in **production**. 
