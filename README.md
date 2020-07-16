@@ -4,8 +4,9 @@
 
 There is an expectation that as the IBM Blockchain Platform (IBP) matures there will be a growing number of HL Fabric networks in production that eventually will migrate to IBP. The intention of this asset is to support a new Expert Labs "Fabric to IBP Migration Offering" in a way that Expert Labs resources can execute the delivery of this offering in a consistent repeatable manner with low risk and a high chance of success. The asset consists of three things: a proven migration `process`, a set of `scripts` and related `documentation`.
 
-**Note:**  a recording of the Brown Bag session on 07/16/2020 describing this asset can be found here:  https://ibm.ent.box.com/folder/118080337214
+**Note 1:**  a recording of the Brown Bag session on 07/16/2020 describing this asset can be found here:  https://ibm.ent.box.com/folder/118080337214
 
+**Note 2:**  IBP Seller recommendation:  avoid saying Hyperledger Fabric to IBM Blockchain Platform because that makes it sound IBP is not Fabric. The Telefonica and quite a few engagements that we have closed like Banco Brasil to Bradesco were migrating Community version to IBM Blockchain Platform, a commercial distribution of Hyperledger Fabric.
 
 ## Migration Process
 
