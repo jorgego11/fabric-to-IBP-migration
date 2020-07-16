@@ -4,6 +4,9 @@
 
 There is an expectation that as the IBM Blockchain Platform (IBP) matures there will be a growing number of HL Fabric networks in production that eventually will migrate to IBP. The intention of this asset is to support a new Expert Labs "Fabric to IBP Migration Offering" in a way that Expert Labs resources can execute the delivery of this offering in a consistent repeatable manner with low risk and a high chance of success. The asset consists of three things: a proven migration `process`, a set of `scripts` and related `documentation`.
 
+**Note:**  a recording of the Brown Bag session on 07/16/2020 describing this asset can be found here:  https://ibm.ent.box.com/folder/118080337214
+
+
 ## Migration Process
 
 There is a separate folder with a Readme file and scripts for each step of the migration process. Note that not all steps are required. For example, some Fabric networks may be using a Raft based Orderer already. The migration steps are:
