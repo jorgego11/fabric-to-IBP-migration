@@ -24,6 +24,7 @@ The next diagram show a high level view of the migration process: we have the mi
 ## The Source Network
 
 To better describe the migration process we will use a real HL Fabric sample network based on this open source repo https://github.com/APGGroeiFabriek/PIVT 
+Additional support about how to setup this sample network is [here](READSOURCE-NET.md)
 
 ![sourceNetwork](img/sourceNetwork.png)
 
