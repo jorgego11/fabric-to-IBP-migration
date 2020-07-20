@@ -6,6 +6,10 @@ The term Organization is used here from a generic business point of view. An Org
 
 For each Organization or node in the network, we will extend the Orderer and Peer MSPs and create new orderer and peers kubernetes pods on the target network. ``A key concept here is that within the context of a network migration, we don't need to create new Org MSPs but we will reuse the existing ones.`` The migration process described in this section must be repeated for **each business Organization in the network**. Also, note that we will not remove the already migrated consenters and peers until the very end. This is to allow to roll back and return to the original source network in case of major problems. 
 
+## Lessons Learned and Gotchas
+
+There are a number of lessons learned from the work done by the platform team in building and enhancing the IBP Enterprise to v2 "Migration Tool". In the future, this information will be enhanced by the experience in the field. For now, this information is captured here ->  https://ibm.ent.box.com/notes/691892785184.
+
 ## Prerequisites 
 
 The prerequisites are: 
